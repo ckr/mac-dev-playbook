@@ -14,6 +14,10 @@ if [ -f ~/.bashrc ]; then
 	. ~/.bashrc
 fi
 
+if [ -f ~/.bash_private ]; then
+    . ~/.bash_private
+fi
+
 export PATH=/Applications/MAMP/bin/php/php5.5.23/bin/:$PATH
 export PATH=/Applications/Android\ Studio.app/sdk/platform-tools:$PATH
 export PATH=/Applications/Android\ Studio.app/sdk/tools:$PATH
