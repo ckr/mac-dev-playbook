@@ -25,8 +25,12 @@
     div = "!. git-divergence"
 
     # Goodness (summary of diff lines added/removed/total)
-    gn = "!. git-goodness"
-    gnc = "!. git-goodness --cached"
+    gn = "! git-goodness"
+    gnc = "! git-goodness --cached"
+
+    # What the hell just happened and who has done it scripts
+    what-the-hell-just-happened = "! git-what-the-hell-just-happened"
+    whodoneit = "! git-whodoneit"
 
     # Fancy logging.
     #   h = head
