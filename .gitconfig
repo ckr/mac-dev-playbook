@@ -22,11 +22,11 @@
     dh1 = diff HEAD~1
 
     # Divergence (commits we added and commits remote added)
-    div = divergence
+    div = "!. git-divergence"
 
     # Goodness (summary of diff lines added/removed/total)
-    gn = goodness
-    gnc = goodness --cached
+    gn = "!. git-goodness"
+    gnc = "!. git-goodness --cached"
 
     # Fancy logging.
     #   h = head
