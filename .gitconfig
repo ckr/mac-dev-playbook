@@ -1,9 +1,19 @@
 [user]
     name = Constantinos Kouloumbris
     email = c@kouloumbris.com
+[core]
+    autocrlf = input
 [diff]
 [color]
     ui = auto
+[push]
+    default = matching
+[merge]
+    tool = vimdiff
+[filter "lfs"]
+    clean = git lfs clean %f
+    smudge = git lfs smudge %f
+    required = true
 [alias]
     st = status
     ci = commit --verbose
@@ -46,13 +56,3 @@
     ra = !git r --all
     l = "!. ~/.githelpers && pretty_git_log"
     la = !git l --all
-
-[merge]
-    tool = vimdiff
-
-[filter "lfs"]
-	clean = git lfs clean %f
-	smudge = git lfs smudge %f
-	required = true
-[core]
-	autocrlf = input
