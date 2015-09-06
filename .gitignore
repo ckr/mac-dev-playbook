@@ -27,6 +27,7 @@
 /.config
 /.cordova
 /.cups
+/.docker
 /.dropbox
 /.dropbox-master
 /.dvdcss
