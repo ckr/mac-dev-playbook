@@ -72,7 +72,9 @@
 /.netrc
 /.npm
 /.offlineimap
+/.oh-my-zsh
 /.openshift
+/.oracle_jre_usage
 /.pip
 /.plexht
 /.psql_history
