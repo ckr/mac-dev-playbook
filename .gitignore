@@ -114,6 +114,9 @@
 /.wireshark-etc
 /.Xauthority
 /.zcompdump
+/.zcompdump-BlackPerl-5.0.5
+/.zsh_history
+/.zsh_private
 /Adlm
 /android-sdk-macosx
 /AndroidStudioProjects
