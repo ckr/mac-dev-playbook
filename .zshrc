@@ -59,14 +59,16 @@ export PATH="/usr/local/heroku/bin:/Users/ckr/bin:/usr/local/sbin:/usr/local/bin
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
+#	export EDITOR='vim'
 # else
-#   export EDITOR='mvim'
+#	export EDITOR='mvim'
 # fi
+export EDITOR='vim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -82,3 +84,23 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+if [ -f ~/.zsh_private ]; then
+    source ~/.zsh_private
+fi
+
+#PHP
+# export PATH="/Applications/MAMP/bin/php/php5.1.6/bin:$PATH"
+# export PATH="/Applications/MAMP/bin/php/php5.2.17/bin:$PATH"
+# export PATH="/Applications/MAMP/bin/php/php5.3.29/bin:$PATH"
+# export PATH="/Applications/MAMP/bin/php/php5.4.42/bin:$PATH"
+# export PATH="/Applications/MAMP/bin/php/php5.5.26/bin:$PATH"
+export PATH="/Applications/MAMP/bin/php/php5.6.10/bin:$PATH"
+
+
+export PATH="/Applications/Android\ Studio.app/sdk/platform-tools:$PATH"
+export PATH="/Applications/Android\ Studio.app/sdk/tools:$PATH"
+export JAVA_HOME="$(/usr/libexec/java_home -v 1.7)"
+
+
+alias dockup="docker-machine start default && eval \"\$(docker-machine env default)\""
