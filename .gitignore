@@ -113,8 +113,7 @@
 /.wireshark
 /.wireshark-etc
 /.Xauthority
-/.zcompdump
-/.zcompdump-BlackPerl-5.0.5
+/.zcompdump*
 /.zsh_history
 /.zsh_private
 /Adlm
