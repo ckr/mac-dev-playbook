@@ -104,3 +104,4 @@ export JAVA_HOME="$(/usr/libexec/java_home -v 1.7)"
 
 
 alias dockup="docker-machine start default && eval \"\$(docker-machine env default)\""
+alias dockdown="docker-machine stop default"
