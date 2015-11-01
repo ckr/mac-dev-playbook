@@ -116,6 +116,7 @@
 /.zcompdump*
 /.zsh_history
 /.zsh_private
+/.zsh-update
 /Adlm
 /android-sdk-macosx
 /AndroidStudioProjects
