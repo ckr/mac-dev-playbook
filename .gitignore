@@ -33,6 +33,7 @@
 /.dvdcss
 /.ebooksrc
 /.ec2
+/.electrum
 /.emacs-places
 /.emacs.bak
 /.emacs.d
@@ -114,9 +115,9 @@
 /.wireshark-etc
 /.Xauthority
 /.zcompdump*
+/.zsh-update
 /.zsh_history
 /.zsh_private
-/.zsh-update
 /Adlm
 /android-sdk-macosx
 /AndroidStudioProjects
