@@ -71,6 +71,7 @@
 /.mutt/certificates
 /.mysql_history
 /.netrc
+/.node-gyp
 /.npm
 /.offlineimap
 /.oh-my-zsh
