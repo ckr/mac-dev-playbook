@@ -95,7 +95,8 @@ fi
 # export PATH="/Applications/MAMP/bin/php/php5.3.29/bin:$PATH"
 # export PATH="/Applications/MAMP/bin/php/php5.4.42/bin:$PATH"
 # export PATH="/Applications/MAMP/bin/php/php5.5.26/bin:$PATH"
-export PATH="/Applications/MAMP/bin/php/php5.6.10/bin:$PATH"
+# export PATH="/Applications/MAMP/bin/php/php5.6.10/bin:$PATH"
+export PATH="/Applications/MAMP/bin/php/php7.0.0/bin:$PATH"
 
 
 export PATH="/Applications/Android\ Studio.app/sdk/platform-tools:$PATH"
