@@ -104,5 +104,9 @@ export PATH="/Applications/Android\ Studio.app/sdk/tools:$PATH"
 export JAVA_HOME="$(/usr/libexec/java_home -v 1.7)"
 
 
-alias dockup="docker-machine start default && eval \"\$(docker-machine env default)\""
-alias dockdown="docker-machine stop default"
+# Aliases
+#
+if [ -f ~/.aliases ]; then
+    source ~/.aliases
+fi
+
