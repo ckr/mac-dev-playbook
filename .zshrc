@@ -5,7 +5,8 @@ export ZSH=/Users/ckr/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+#ZSH_THEME="robbyrussell"
+ZSH_THEME="half-life"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -49,7 +50,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git bower composer common-aliases docker mvn npm phing vagrant)
+plugins=(git bower composer common-aliases docker npm phing vagrant osx brew-cask sudo)
 
 # User configuration
 
@@ -101,7 +102,7 @@ export PATH="/Applications/MAMP/bin/php/php7.0.0/bin:$PATH"
 
 export PATH="/Applications/Android\ Studio.app/sdk/platform-tools:$PATH"
 export PATH="/Applications/Android\ Studio.app/sdk/tools:$PATH"
-export JAVA_HOME="$(/usr/libexec/java_home -v 1.7)"
+#export JAVA_HOME="$(/usr/libexec/java_home -v 1.7)"
 
 
 # Aliases
