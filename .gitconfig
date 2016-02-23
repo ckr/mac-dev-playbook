@@ -1,13 +1,16 @@
 [user]
-    name = Constantinos Kouloumbris
+	name = Constantinos Kouloumbris
     email = c@kouloumbris.com
 [core]
     autocrlf = input
+	excludesfile = /Users/ckr/.gitignore_global
 [diff]
 [color]
     ui = auto
 [push]
     default = matching
+[branch]
+    autosetuprebase = always
 [merge]
     tool = vimdiff
 [filter "lfs"]
@@ -31,6 +34,7 @@
     b = branch
     ds = diff --stat=160,120
     dh1 = diff HEAD~1
+    revision = describe --tags --always HEAD
 
     # Divergence (commits we added and commits remote added)
     div = "!. git-divergence"
