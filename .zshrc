@@ -99,6 +99,8 @@ fi
 # export PATH="/Applications/MAMP/bin/php/php5.6.10/bin:$PATH"
 export PATH="/Applications/MAMP/bin/php/php7.0.0/bin:$PATH"
 
+# global composer bin
+export PATH="~/.composer/vendor/bin:$PATH"
 
 export PATH="/Applications/Android\ Studio.app/sdk/platform-tools:$PATH"
 export PATH="/Applications/Android\ Studio.app/sdk/tools:$PATH"

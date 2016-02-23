@@ -59,6 +59,7 @@
 /.htoprc
 /.hudson
 /.IntelliJIdea14
+/.IntelliJIdea15
 /.ipython
 /.irb-history
 /.irb_history
@@ -78,6 +79,7 @@
 /.oh-my-zsh
 /.openshift
 /.oracle_jre_usage
+/.pdepend
 /.pip
 /.plexht
 /.psql_history
