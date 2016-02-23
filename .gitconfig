@@ -1,6 +1,7 @@
 [user]
 	name = Constantinos Kouloumbris
-    email = c@kouloumbris.com
+    # email = c@kouloumbris.com
+    email = constantinoskouloumbris@rentalcars.com
 [core]
     autocrlf = input
 	excludesfile = /Users/ckr/.gitignore_global
