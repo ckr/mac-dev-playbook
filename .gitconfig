@@ -1,9 +1,9 @@
 [user]
-	name = Constantinos Kouloumbris
+    name = Constantinos Kouloumbris
     email = c@kouloumbris.com
 [core]
     autocrlf = input
-	excludesfile = /Users/ckr/.gitignore_global
+    excludesfile = /Users/ckr/.gitignore_global
 [diff]
 [color]
     ui = auto
