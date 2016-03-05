@@ -101,6 +101,7 @@
 /.subversion
 /.thelongpoll
 /.toot
+/.tor
 /.tox
 /.Trash
 /.trc
@@ -142,6 +143,7 @@
 /Desktop
 /desktop_temp
 /doc
+/docker
 /Documents
 /Downloads
 /Dropbox
