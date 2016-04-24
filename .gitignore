@@ -106,6 +106,7 @@
 /.Trash
 /.trc
 /.vagrant.d
+/.vegas
 /.vim-fuf-data
 /.vim-tmp
 /.vim/.netrwhist
@@ -115,8 +116,8 @@
 /.vimrc.backup
 /.vimrc.old
 /.viper
-/.WebIde90
 /.WebIde100
+/.WebIde90
 /.wine
 /.wireshark
 /.wireshark-etc
