@@ -2,8 +2,9 @@ alias dogup="docker-machine start default && eval \"\$(docker-machine env defaul
 alias dogdown="docker-machine stop default"
 alias dogenv="eval \"\$(docker-machine env default)\""
 alias cssh="tmux-cssh"
-
 alias dockerPsClean="docker ps -a | grep 'Exited' | awk '{print $1}' | xargs  docker rm"
+alias dockerUpdateAll="docker images | awk '{print \$1}' | xargs -L1 docker pull"
+
 dockerIp() {
 
     docker-machine ip default 2> /dev/null
