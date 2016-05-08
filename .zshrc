@@ -108,7 +108,6 @@ export PATH="/Applications/Android\ Studio.app/sdk/platform-tools:$PATH"
 export PATH="/Applications/Android\ Studio.app/sdk/tools:$PATH"
 export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
 
-
 # Aliases
 #
 if [ -f ~/.aliases ]; then
