@@ -4,7 +4,7 @@ alias dogenv="eval \"\$(docker-machine env default)\""
 alias cssh="tmux-cssh"
 alias dockerPsClean="docker ps -a --format 'table {{.Names}} {{.Status}}' | grep 'Exited' | awk '{print $1}' | xargs docker rm"
 alias dockerUpdateAll="docker images --format 'table {{.Repository}} {{.Tag}}' | awk '{print $1 ":" $2}' | grep -iv 'repository' | xargs -L1 docker pull"
-alias dockerRemoveDangling="docker rmi \$(docker images -f \"dangling=true\" -q)" 
+alias dockerRemoveDangling="docker images -f 'dangling=true' -q | awk '{print $1}' | xargs -L1 docker rmi"
 
 dockerIp() {
 
