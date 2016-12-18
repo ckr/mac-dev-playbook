@@ -17,13 +17,12 @@
     - network
 
 - name: Install useful desktop tools (brew)
-  become: yes
-  brew: name={{ item }} state=present
+  homebrew: name={{ item }} state=present
   with_items: "{{ desktop.tools }}"
-  when: ansible_pkg_mgr == "brew"
+  when: ansible_pkg_mgr == "homebrew"
   tags:
     - packages
     - network
 
 - name: Install user image from Gravatar
-  get_url: url=https://s.gravatar.com/avatar/54bfadc28c22bf76402608db646cd031?s=100 dest=~/.face
+  get_url: url=https://s.gravatar.com/avatar/e1fd1e9cd946dfd693ad83cdaa79b723?s=100 dest=~/.face
