@@ -1,0 +1,10 @@
+git:
+    user:
+        name: Constantinos Kouloumbris
+        email: c@kouloumbris.com
+        github:
+            username: ckr
+
+    dependencies:
+        - git
+        - tig

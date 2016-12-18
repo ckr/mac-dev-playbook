@@ -1,0 +1,8 @@
+dotfiles:
+
+  dependencies:
+    - bash
+    - bash-completion
+    - ack
+    - links
+
