@@ -1,7 +1,7 @@
 - name: Install useful desktop tools (dnf)
   become: yes
   dnf: name={{ item }} state=present
-  with_items: "{{ desktop.tools }}"
+  with_items: "{{ desktop.linuxTools }}"
   when: ansible_pkg_mgr == "dnf"
   tags:
     - packages
@@ -10,7 +10,7 @@
 - name: Install useful desktop tools (yum)
   become: yes
   yum: name={{ item }} state=present
-  with_items: "{{ desktop.tools }}"
+  with_items: "{{ desktop.linuxTools }}"
   when: ansible_pkg_mgr == "yum"
   tags:
     - packages
@@ -18,7 +18,7 @@
 
 - name: Install useful desktop tools (brew)
   homebrew: name={{ item }} state=present
-  with_items: "{{ desktop.tools }}"
+  with_items: "{{ desktop.brewTools }}"
   when: ansible_pkg_mgr == "homebrew"
   tags:
     - packages
@@ -32,7 +32,7 @@
 
 - name: Install useful desktop applications (brew cask)
   homebrew_cask: name={{ item }} state=present
-  with_items: "{{ desktop.applications }}"
+  with_items: "{{ desktop.brewApplications }}"
   when: ansible_pkg_mgr == "homebrew"
   tags:
     - packages
