@@ -15,4 +15,6 @@ desktop:
     - rbenv
     - rbenv-default-gems
     - ruby
+  applications:
+    - atom
 
