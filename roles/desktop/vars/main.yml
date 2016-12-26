@@ -19,4 +19,15 @@ desktop:
   brewApplications:
     - atom
     - google-chrome
+    - slack
+    - 1password
+    - alfred
+    - bartender
+    - brackets
+    - docker
+    - dropbox
+    - flexiglass
+    - skype
+    - spotify
+    - franz
 
