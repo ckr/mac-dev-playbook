@@ -7,4 +7,3 @@ git:
 
     dependencies:
         - git
-        - tig

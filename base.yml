@@ -6,4 +6,4 @@
   roles:
     # - dotfiles
     # - vim
-    # - git
+    - git

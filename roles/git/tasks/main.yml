@@ -17,10 +17,30 @@
     - packages
     - network
 
+- name: Install useful desktop tools (brew)
+  homebrew: name={{ item }} state=present
+  with_items: "{{ git.dependencies }}"
+  when: ansible_pkg_mgr == "homebrew"
+  tags:
+    - packages
+    - network
+
 - name: Copy dotfiles
   copy: src={{ item }} dest={{ ansible_user_dir }}/.{{ item | basename }}
   with_fileglob:
     - ./dotfiles/*
+  tags:
+    - files
+
+- name: Ensure bin/ folder exists
+  file: path={{ ansible_user_dir}}/bin state=directory
+  tags:
+    - files
+
+- name: Copy bin/ files
+  copy: src={{ item }} dest={{ ansible_user_dir }}/bin/{{ item | basename }} mode=ug+rwx,o+rx
+  with_fileglob:
+    - ./bin/*
   tags:
     - files
 

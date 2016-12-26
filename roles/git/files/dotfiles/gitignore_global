@@ -1,0 +1,5 @@
+*~
+.DS_Store
+.phing_targets
+.idea
+*.tar.gz
