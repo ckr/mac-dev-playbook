@@ -4,6 +4,9 @@ git:
         email: c@kouloumbris.com
         github:
             username: ckr
-
     dependencies:
-        - git
+      - git
+    links:
+      - { src: '{{ ansible_user_dir }}/bin_tmp/gn', dest: '{{ ansible_user_dir }}/bin_tmp/gn.py' }
+
+

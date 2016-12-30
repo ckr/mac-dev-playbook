@@ -44,7 +44,13 @@
   tags:
     - files
 
+- name: Create symlinks in bin folder
+  file: src={{ item.src }} dest={{ item.dest }} state=link
+  with_items: "{{ git.links }}"
+  tags:
+    - files
+
 - name: Create .gitconfig file
-  template:  src=gitconfig.j2 dest={{ ansible_user_dir}}/.gitconfig
+  template: src=gitconfig.j2 dest={{ ansible_user_dir}}/.gitconfig
   tags:
     - files
