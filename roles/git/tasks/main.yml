@@ -1,22 +1,4 @@
 ---
-- name: Install git and tools (dnf)
-  sudo: yes
-  dnf: name={{ item }} state=present
-  with_items: "{{ git.dependencies }}"
-  when: ansible_pkg_mgr == "dnf"
-  tags:
-    - packages
-    - network
-
-- name: Install git and tools (yum)
-  sudo: yes
-  yum: name={{ item }} state=present
-  with_items: "{{ git.dependencies }}"
-  when: ansible_pkg_mgr == "yum"
-  tags:
-    - packages
-    - network
-
 - name: Install useful desktop tools (brew)
   homebrew: name={{ item }} state=present
   with_items: "{{ git.dependencies }}"
