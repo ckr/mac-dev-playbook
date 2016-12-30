@@ -1,7 +1,5 @@
 desktop:
-  linuxTools:
-    - terminattor
-  brewTools:
+  tools:
     - selecta
     - socat
     - tmux-cssh
@@ -16,7 +14,7 @@ desktop:
     - rbenv
     - rbenv-default-gems
     - ruby
-  brewApplications:
+  applications:
     - atom
     - google-chrome
     - slack

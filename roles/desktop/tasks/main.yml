@@ -1,7 +1,7 @@
 ---
 - name: Install useful desktop tools (brew)
   homebrew: name={{ item }} state=present
-  with_items: "{{ desktop.brewTools }}"
+  with_items: "{{ desktop.tools }}"
   when: ansible_pkg_mgr == "homebrew"
   tags:
     - packages
@@ -15,7 +15,7 @@
 
 - name: Install useful desktop applications (brew cask)
   homebrew_cask: name={{ item }} state=present
-  with_items: "{{ desktop.brewApplications }}"
+  with_items: "{{ desktop.applications }}"
   when: ansible_pkg_mgr == "homebrew"
   tags:
     - packages
