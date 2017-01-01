@@ -3,6 +3,14 @@ vim:
     - .vim
     - .vim/autoload
     - .vim/bundle
+    - .vim/colors
+    - .vim/ftdetect
+    - .vim/ftplugin
+    - .vim/indent
+    - .vim/plugin
+    - .vim/ruby
+    - .vim/syntax
+    - .vim/ruby/vim
     - .vim/sessions
     - .vim/undodir
 
