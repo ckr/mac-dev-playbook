@@ -2,18 +2,13 @@ desktop:
   tools:
     - coreutils
     - csshx
-    - csshx
     - curl
     - fabric
     - gd
-    - git-flow
-    - goaccess
     - goaccess
     - gradle
     - groovy
     - htop-osx
-    - htop-osx
-    - percona-toolkit
     - percona-toolkit
     - php70
     - php70-pthreads
