@@ -11,10 +11,13 @@
   tags:
     - files
 
-- name: Ensure ~/Work folder exists
-  file: path=~/Work state=directory
+- name: Ensure ~/work folder exists
+  file: path={{ ansible_user_dir}}/work state=directory
   tags:
     - files
+
+- name: Ensure ~/code folder exists
+  file: path={{ ansible_user_dir}}/code state=directory
 
 - name: Copy bin/ files
   copy: src={{ item }} dest={{ ansible_user_dir }}/bin/{{ item | basename }} mode=ug+rwx,o+rx
@@ -23,20 +26,10 @@
   tags:
     - files
 
-- name: Install useful tools (dnf)
-  sudo: yes
-  dnf: name={{ item }} state=present
+- name: Install useful tools (brew)
+  homebrew: name={{ item }} state=present
   with_items: "{{ dotfiles.dependencies }}"
-  when: ansible_pkg_mgr == "dnf"
-  tags:
-    - packages
-    - network
-
-- name: Install useful tools (yum)
-  sudo: yes
-  yum: name={{ item }} state=present
-  with_items: "{{ dotfiles.dependencies }}"
-  when: ansible_pkg_mgr == "yum"
+  when: ansible_pkg_mgr == "homebrew"
   tags:
     - packages
     - network
