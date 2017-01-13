@@ -7,7 +7,7 @@
     - packages
     - network
 
-- name: Copy dotfiles
+- name: Copy git dotfiles
   copy: src={{ item }} dest={{ ansible_user_dir }}/.{{ item | basename }}
   with_fileglob:
     - ./dotfiles/*
