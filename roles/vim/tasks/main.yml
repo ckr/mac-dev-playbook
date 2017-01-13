@@ -15,20 +15,10 @@
   tags:
     - files
 
-- name: Install enhanced Vim and plugin dependencies (dnf)
-  sudo: yes
-  dnf: name={{ item }} state=present
+- name: Install vim plugin dependencies (brew)
+  homebrew: name={{ item }} state=present
   with_items: "{{ vim.dependencies }}"
-  when: ansible_pkg_mgr == "dnf"
-  tags:
-    - packages
-    - network
-
-- name: Install enhanced Vim and plugin dependencies (yum)
-  sudo: yes
-  yum: name={{ item }} state=present
-  with_items: "{{ vim.dependencies }}"
-  when: ansible_pkg_mgr == "yum"
+  when: ansible_pkg_mgr == "homebrew"
   tags:
     - packages
     - network
@@ -38,4 +28,3 @@
   with_items: "{{ vim.plugins }}"
   tags:
     - network
-

@@ -4,6 +4,6 @@
 - name: Base setup
   hosts: localhost
   roles:
-    # - dotfiles
-    # - vim
+    - dotfiles
+    - vim
     - git
