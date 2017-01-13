@@ -1,11 +1,11 @@
-" This is Gary Bernhardt's .vimrc file
+" This is Constantinos Kouloumbris's .vimrc file
 " vim:set ts=2 sts=2 sw=2 expandtab:
 
 " remove all existing autocmds
 autocmd!
 
 " initialize @tpope, whence all vim plugins come
-call pathogen#incubate()
+call pathogen#infect('bundle/{}')
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " BASIC EDITING CONFIGURATION
@@ -19,17 +19,13 @@ set nocompatible
 set hidden
 " remember more commands and search history
 set history=10000
-" Tab == 4 spaces
 set expandtab
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
-
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 set autoindent
 set laststatus=2
-" Show matching brackets.
 set showmatch
-" Highlight the searched string, while typing.
 set incsearch
 set hlsearch
 " make searches case-sensitive only if they contain upper-case characters
@@ -91,12 +87,6 @@ set autoread
 " slower with the new regex engine.
 set re=1
 
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" CUSTOM KEY MAPPINGS
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-inoremap kj <Esc>
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CUSTOM AUTOCMDS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -114,7 +104,7 @@ augroup vimrcEx
   autocmd FileType ruby,haml,eruby,yaml,html,javascript,sass,cucumber set ai sw=2 sts=2 et
   autocmd FileType python set sw=4 sts=4 et
 
-  autocmd! BufRead,BufNewFile *.sass setfiletype sass 
+  autocmd! BufRead,BufNewFile *.sass setfiletype sass
 
   autocmd BufRead *.mkd  set ai formatoptions=tcroqn2 comments=n:&gt;
   autocmd BufRead *.markdown  set ai formatoptions=tcroqn2 comments=n:&gt;
