@@ -1,31 +1,54 @@
 desktop:
   tools:
-    - selecta
-    - socat
-    - tmux-cssh
-    - tree
-    - watch
-    - goaccess
+    - coreutils
     - csshx
+    - csshx
+    - curl
+    - fabric
+    - gd
+    - git-flow
+    - goaccess
+    - goaccess
+    - gradle
+    - groovy
+    - htop-osx
     - htop-osx
     - percona-toolkit
+    - percona-toolkit
+    - php70
+    - php70-pthreads
+    - pssh
+    - pwgen
     - python
     - python3
     - rbenv
     - rbenv-default-gems
     - ruby
+    - selecta
+    - socat
+    - tmux-cssh
+    - tor
+    - tree
+    - watch
   applications:
-    - atom
-    - google-chrome
-    - slack
     - 1password
+    - aerial
     - alfred
+    - atom
     - bartender
     - brackets
+    - cord
     - docker
     - dropbox
     - flexiglass
-    - skype
-    - spotify
     - franz
+    - google-chrome
+    - iterm2
+    - sequel-pro
+    - skype
+    - slack
+    - spotify
+    - the-unarchiver
+    - vagrant
+    - vagrant-manager
 
