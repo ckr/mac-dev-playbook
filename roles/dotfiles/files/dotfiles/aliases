@@ -1,0 +1,35 @@
+# alias env
+
+# Unbreak broken, non-colored terminal
+alias ls='ls -G'
+alias ll='ls -lG'
+
+#common stuff
+alias vi="vim -X"
+alias vim="vim -X"
+alias ll="ls -al --group-directories-first"
+alias du="du -kh"
+alias ..="cd ..;"
+alias ...="cd ..;"
+alias h="history"
+alias traceroute="traceroute -I"
+alias who="who -HT"
+alias mkdir="mkdir -p"
+alias path="echo -e ${PATH//:/\\n}"
+
+# cluster ssh alias
+alias cssh="tmux-cssh"
+
+#docker machine alias
+alias dogup="docker-machine start default && eval \"\$(docker-machine env default)\""
+alias dogdown="docker-machine stop default"
+alias dogenv="eval \"\$(docker-machine env default)\""
+
+# docker alias
+alias dc="docker-compose"
+alias dockerPsClean="docker ps -a --format 'table {{.Names}} {{.Status}}' | grep -iv 'Names' | grep 'Exited' | awk '{print $1}' | xargs docker rm"
+alias dockerUpdateAll="docker images --format 'table {{.Repository}} {{.Tag}}' | awk '{print \$1 \":\" \$2}' | grep -iv 'repository' | xargs -L1 docker pull"
+alias dockerRemoveDangling="docker images -f 'dangling=true' -q | awk '{print $1}' | xargs -L1 docker rmi"
+alias dockerUI="docker run -d -p 9000:9000 --privileged -v /var/run/docker.sock:/var/run/docker.sock uifd/ui-for-docker"
+alias dockerSocket="socat TCP-LISTEN:2375,reuseaddr,fork UNIX-CONNECT:/var/run/docker.sock"
+alias dockerHostIp="cat /Users/ckr/Library/Containers/com.docker.docker/Data/database/com.docker.driver.amd64-linux/slirp/host"

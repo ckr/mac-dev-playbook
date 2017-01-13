@@ -1,0 +1,35 @@
+# functions
+
+dockerIp() {
+    docker-machine ip default 2> /dev/null
+}
+
+dogEnvClean() {
+    unset DOCKER_TLS_VERIFY
+    unset DOCKER_CERT_PATH
+    unset DOCKER_MACHINE_NAME
+    unset DOCKER_HOST
+}
+
+setDockerIpInHosts() {
+    SUCCESS=0;
+    grep -q $(dockerIp) /etc/hosts;
+
+    if [ $? -eq $SUCCESS ]; then
+        echo "$(dockerIp) already in hosts file";
+    else
+        echo $(dockerIp) dockerhost | sudo tee -a /etc/hosts
+    fi
+}
+
+# Check if command exists
+#
+# Usage: have fortune && fortune
+function have() {
+	type "$1" &> /dev/null;
+}
+
+# Show top 10 used commands in history
+function top10() {
+	history | awk '{a[$4]++ } END{for(i in a){print a[i] " " i}}'|sort -rn |head -n 10
+}

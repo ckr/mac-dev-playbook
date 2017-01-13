@@ -4,3 +4,28 @@
 if [ -f ~/.bashrc ]; then
 	. ~/.bashrc
 fi
+
+# Load the aliases file
+if [ -f ~/.aliases ]; then
+	. ~/.aliases
+fi
+
+# Load the profile file
+if [ -f ~/.profile ]; then
+    . ~/.profile
+fi
+
+# Load the private file
+if [ -f ~/.private ]; then
+    . ~/.private
+fi
+
+# Load path export overwrites
+if [ -f ~/.path_exports ]; then
+	. ~/.path_exports
+fi
+
+# Load other exports
+if [ -f ~/.other_exports ]; then
+	. ~/.other_exports
+fi
