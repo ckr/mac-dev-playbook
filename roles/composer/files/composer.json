@@ -1,0 +1,13 @@
+{
+    "require": {
+        "phing/phing": "^2.13",
+        "phpunit/phpunit": "^5.2",
+        "phpdocumentor/phpdocumentor": "^2.8",
+        "phpmd/phpmd": "^2.3",
+        "squizlabs/php_codesniffer": "^2.5",
+        "sebastian/phpcpd": "^2.0",
+        "phploc/phploc": "^3.0",
+        "behat/behat": "^3.2",
+        "pear/archive_tar" : "^1.3.11"
+    }
+}

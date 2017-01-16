@@ -1,0 +1,4 @@
+composer:
+  dependencies:
+    - php70
+    - composer
