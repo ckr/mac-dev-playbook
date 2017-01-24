@@ -1,0 +1,10 @@
+---
+- name: Change dock autohide timer to 0
+  command: defaults write com.apple.dock autohide-time-modifier -int 0
+  tags:
+    - tweeks
+
+- name: Restart dock
+  command: killall Dock
+  tags:
+    - tweeks
