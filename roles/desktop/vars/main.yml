@@ -2,16 +2,12 @@ desktop:
   tools:
     - coreutils
     - csshx
-    - curl
     - fabric
     - gd
     - goaccess
-    - gradle
     - groovy
     - htop-osx
     - percona-toolkit
-    - php70
-    - php70-pthreads
     - pssh
     - pwgen
     - python
@@ -46,4 +42,5 @@ desktop:
     - the-unarchiver
     - vagrant
     - vagrant-manager
+    - viber
 
