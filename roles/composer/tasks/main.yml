@@ -1,4 +1,11 @@
 ---
+- name: Install php tap (brew)
+  homebrew_tap: name="homebrew/homebrew-php" state=present
+  when: ansible_pkg_mgr == "homebrew"
+  tags:
+    - packages
+    - network
+
 - name: Install composer (brew)
   homebrew: name={{ item }} state=present
   with_items: "{{ composer.dependencies }}"
@@ -6,6 +13,11 @@
   tags:
     - packages
     - network
+
+- name: Make sure composer folder exists
+  file: path={{ ansible_user_dir}}/.composer state=directory
+  tags:
+    - files
 
 - name: Copy config.json file
   copy: src=./config.json dest={{ ansible_user_dir }}/.composer/config.json
