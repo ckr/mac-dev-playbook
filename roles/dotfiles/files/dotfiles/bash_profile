@@ -1,6 +1,10 @@
 # .bash_profile
 
 # Get the aliases and functions
+if [ -f ~/bin/git-completion.bash ]; then
+	. ~/bin/git-completion.bash
+fi
+
 if [ -f ~/.bashrc ]; then
 	. ~/.bashrc
 fi
