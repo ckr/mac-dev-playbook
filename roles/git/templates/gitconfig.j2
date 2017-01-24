@@ -7,6 +7,7 @@
     whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
     autocrlf = input
     excludesfile = ~/.gitignore_global
+    editor = /usr/bin/vim
 [diff]
 [color]
     ui = auto
@@ -69,7 +70,7 @@
     la = !git l --all
 [difftool "sourcetree"]
     cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-    path = 
+    path =
 [mergetool "sourcetree"]
     cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
     trustExitCode = true
