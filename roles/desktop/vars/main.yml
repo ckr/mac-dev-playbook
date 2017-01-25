@@ -43,4 +43,4 @@ desktop:
     - vagrant
     - vagrant-manager
     - viber
-
+    - istat-menus
