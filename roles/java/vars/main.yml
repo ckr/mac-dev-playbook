@@ -1,0 +1,4 @@
+java:
+  dependencies:
+    - gradle
+    - maven
