@@ -7,7 +7,7 @@ alias ll='ls -lG'
 #common stuff
 alias vi="vim -X"
 alias vim="vim -X"
-alias ll="ls -al --group-directories-first"
+alias ll="ls -al"
 alias du="du -kh"
 alias ..="cd ..;"
 alias ...="cd ..;"
