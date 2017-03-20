@@ -5,6 +5,7 @@
     - ./dotfiles/*
   tags:
     - files
+    - dotaliases
 
 - name: Ensure bin/ folder exists
   file: path={{ ansible_user_dir}}/bin state=directory
@@ -33,4 +34,3 @@
   tags:
     - packages
     - network
-

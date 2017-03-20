@@ -20,6 +20,9 @@ alias path="echo -e ${PATH//:/\\n}"
 # cluster ssh alias
 alias cssh="tmux-cssh"
 
+#fix nsupdate navigation
+alias nsupdate='rlwrap nsupdate'
+
 #docker machine alias
 alias dogup="docker-machine start default && eval \"\$(docker-machine env default)\""
 alias dogdown="docker-machine stop default"
