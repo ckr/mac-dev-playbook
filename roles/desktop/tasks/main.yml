@@ -6,12 +6,22 @@
   tags:
     - packages
     - network
+    - tools
 
 - name: Install brew cask tap (brew)
   homebrew_tap: name="caskroom/cask" state=present
   when: ansible_pkg_mgr == "homebrew"
   tags:
     - applications
+
+- name: Install python tools
+  pip: name={{ item }} state=present
+  with_items: "{{ desktop.pythonTools }}"
+  tags:
+    - packages
+    - network
+    - tools
+    - pip
 
 - name: Install useful desktop applications (brew cask)
   homebrew_cask: name={{ item }} state=present

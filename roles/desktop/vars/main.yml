@@ -21,6 +21,8 @@ desktop:
     - tor
     - tree
     - watch
+  pythonTools:
+    - glances
   applications:
     - 1password
     - aerial
