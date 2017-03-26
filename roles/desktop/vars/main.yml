@@ -21,6 +21,7 @@ desktop:
     - tor
     - tree
     - watch
+    - git-quick-stats
   pythonTools:
     - glances
   applications:
