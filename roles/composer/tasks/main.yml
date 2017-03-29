@@ -8,7 +8,7 @@
 
 - name: Install composer (brew)
   homebrew: name={{ item }} state=present
-  with_items: "{{ composer.dependencies }}"
+  with_items: "{{ composer.dependenciesBrew }}"
   when: ansible_pkg_mgr == "homebrew"
   tags:
     - packages
@@ -29,7 +29,10 @@
   tags:
     - files
 
-- name: Run composer Install
-  command: composer global install
+- name: Run composer global install
+  composer:
+    command: install
+    working_dir: "{{ ansible_user_dir }}/.composer"
   tags:
     - packages
+    - composer
