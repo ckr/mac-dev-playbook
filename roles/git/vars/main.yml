@@ -4,9 +4,10 @@ git:
         email: c@kouloumbris.com
         github:
             username: ckr
-    dependencies:
+    dependenciesBrew:
       - git
       - git-flow
       - git-standup
+      - git-quick-stats
     links:
       - { src: '{{ ansible_user_dir }}/bin/gn', dest: '{{ ansible_user_dir }}/bin/gn.py' }
