@@ -27,10 +27,19 @@
   tags:
     - files
 
-- name: Install useful tools (brew)
+- name: Install git dependencies (brew)
   homebrew: name={{ item }} state=present
-  with_items: "{{ dotfiles.dependencies }}"
+  with_items: "{{ dotfiles.dependenciesBrew }}"
   when: ansible_pkg_mgr == "homebrew"
   tags:
     - packages
     - network
+
+- name: Install git dependencies (gem)
+  gem: name={{ item }} state=present
+  with_items: "{{ dotfiles.dependenciesGem }}"
+  become: true
+  tags:
+    - packages
+    - network
+    - shells

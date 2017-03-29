@@ -1,6 +1,8 @@
 dotfiles:
-  dependencies:
+  dependenciesBrew:
     - bash-completion
     - ack
     - links
-
+    - tmux-cssh
+  dependenciesGem:
+    - tmuxinator

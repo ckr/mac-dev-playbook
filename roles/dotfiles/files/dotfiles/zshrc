@@ -112,3 +112,8 @@ if [ -f ~/.phpbrew/bashrc ]; then
 	#export PHPBREW_SET_PROMPT=1
 	export PHPBREW_RC_ENABLE=1
 fi
+
+# Load tmuxinator
+if [ -f ~/.tmuxinator.zsh ]; then
+  . ~/.tmuxinator.zsh
+fi
