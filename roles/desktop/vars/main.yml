@@ -17,11 +17,9 @@ desktop:
     - ruby
     - selecta
     - socat
-    - tmux-cssh
     - tor
     - tree
     - watch
-    - git-quick-stats
   pythonTools:
     - glances
   applications:
