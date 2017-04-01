@@ -6,7 +6,7 @@
     - packages
     - network
 
-- name: Install composer (brew)
+- name: Install composer dependencies (brew)
   homebrew: name={{ item }} state=present
   with_items: "{{ composer.dependenciesBrew }}"
   when: ansible_pkg_mgr == "homebrew"
