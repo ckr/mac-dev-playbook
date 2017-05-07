@@ -5,7 +5,6 @@ desktop:
     - fabric
     - gd
     - goaccess
-    - groovy
     - htop-osx
     - percona-toolkit
     - pssh
@@ -15,7 +14,6 @@ desktop:
     - rbenv
     - rbenv-default-gems
     - ruby
-    - selecta
     - socat
     - tor
     - tree

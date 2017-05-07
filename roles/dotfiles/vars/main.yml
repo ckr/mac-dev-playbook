@@ -5,4 +5,4 @@ dotfiles:
     - links
     - tmux-cssh
   dependenciesGem:
-    - tmuxinator
+    - i2cssh

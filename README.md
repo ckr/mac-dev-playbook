@@ -6,6 +6,18 @@ DOTFILES
 This repository contains most of my "movable" setup.  Mostly these are configurations
 for zsh shell, git version control, and Vim text editor.
 
+Dependencies
+------------
+
+* Homebrew (https://brew.sh/)
+* Ansible (https://www.ansible.com/)
+
+You can install ansible via Homebrew
+
+```
+$ brew install ansible
+```
+
 Installation
 ------------
 
@@ -59,4 +71,3 @@ Feedback
 If you need to get in touch, you can find instruction at https://kouloumbris.com.  Alternatively, you can send in comments and pull requests for the project on GitHub at https://github.com/ckr/dotfiles .
 
 Patches welcome! ;)
-
