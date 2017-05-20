@@ -1,5 +1,5 @@
 # zprofile
 
-if [ -f ~/.zshrc ]; then
-  . ~/.zshrc
-fi
+#if [ -f ~/.zshrc ]; then
+#  . ~/.zshrc
+#fi
