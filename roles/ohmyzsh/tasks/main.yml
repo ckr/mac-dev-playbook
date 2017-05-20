@@ -1,0 +1,25 @@
+---
+- name: Installing Zsh and git dependencies (brew)
+  homebrew: name={{ item }} state=present
+  with_items: "{{ ohmyzsh.dependenciesBrew }}"
+  when: ansible_pkg_mgr == "homebrew"
+  tags:
+    - packages
+    - terminal
+
+- name: Backing up existing ~/.zshrc
+  copy: src={{ ansible_user_dir }}/.zshrc dest={{ ansible_user_dir }}/.zshrc.orig
+  tags:
+    - files
+
+- name: Cloning oh-my-zsh
+  git:
+    repo=https://github.com/robbyrussell/oh-my-zsh
+    dest=~/.oh-my-zsh
+  tags:
+    - cloning
+
+- name: Chanching default shell to zsh
+  shell: chsh -s $(grep /zsh$ /etc/shells | tail -1)
+  tags:
+      - terminal

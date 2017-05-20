@@ -4,8 +4,10 @@
 - name: Base setup
   hosts: localhost
   roles:
+    - ohmyzsh
     - dotfiles
     - vim
     - git
     - composer
     - mactweeks
+    - terminal

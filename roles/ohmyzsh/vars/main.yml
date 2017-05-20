@@ -1,0 +1,4 @@
+ohmyzsh:
+  dependenciesBrew:
+    - zsh
+    - git
