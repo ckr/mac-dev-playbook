@@ -1,0 +1,24 @@
+---
+- name: Ensure .oh-my-zsh/cutom/plugins/heimdall folder exists
+  file: path={{ ansible_user_dir}}/.oh-my-zsh/custom/plugins/heimdall state=directory
+  tags:
+    - files
+    - heimdall
+
+- name: Copy oh-my-zsh custom plugin files
+  copy: src={{ item }} dest={{ ansible_user_dir }}/.oh-my-zsh/custom/plugins/heimdall/{{ item | basename }} mode=ug+rwx,o+rx
+  with_fileglob:
+    - ./heimdall/*
+  tags:
+    - files
+    - heimdall
+
+- name: Install dependencies (brew)
+  homebrew: name={{ item }} state=present
+  with_items: "{{ dotfiles.dependenciesBrew }}"
+  when: ansible_pkg_mgr == "homebrew"
+  tags:
+    - packages
+    - network
+    - terminal
+    - heimdall
