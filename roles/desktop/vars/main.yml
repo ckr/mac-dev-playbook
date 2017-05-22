@@ -18,6 +18,7 @@ desktop:
     - tor
     - tree
     - watch
+    - gpg
   pythonTools:
     - glances
   applications:
