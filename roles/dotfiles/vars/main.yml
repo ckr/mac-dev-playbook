@@ -4,5 +4,6 @@ dotfiles:
     - ack
     - links
     - tmux-cssh
+    - rlwrap
   dependenciesGem:
     - i2cssh
