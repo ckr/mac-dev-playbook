@@ -19,6 +19,7 @@ desktop:
     - tree
     - watch
     - gpg
+    - kubernetes-cli
   pythonTools:
     - glances
   applications:
