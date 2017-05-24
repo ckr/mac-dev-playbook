@@ -22,4 +22,4 @@
 - name: Chanching default shell to zsh
   shell: chsh -s $(grep /zsh$ /etc/shells | tail -1)
   tags:
-      - terminal
+    - terminal
