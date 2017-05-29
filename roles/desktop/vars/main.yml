@@ -21,6 +21,7 @@ desktop:
     - gpg
     - cowsay
     - kubernetes-cli
+    - asciinema
   pythonTools:
     - glances
   applications:
