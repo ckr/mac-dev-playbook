@@ -35,6 +35,7 @@
     - vim-plugins
     - vim-plugins-install
 
+# Does not work yet
 # - name: Run vundle plugin clean
 #   shell: vim +PluginClean +qall
 #   register: vim_plugins_cleaned
