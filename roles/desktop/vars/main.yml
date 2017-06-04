@@ -56,3 +56,10 @@ desktop:
     - { id: 921458519, name: "DrCleaner" }
     - { id: 425424353, name: "The Unarchiver" }
     - { id: 475260933, name: "HardwareGrowler" }
+    - { id: 866773894, name: "Quiver" }
+    - { id: 638161122, name: "YubiKey Personalization Tool" }
+    - { id: 715768417, name: "Microsoft Remote Desktop" }
+    - { id: 924726344, name: "Deliveries" }
+    - { id: 430255202, name: "Mactracker" }
+    - { id: 865500966, name: "feedly" }
+    - { id: 410628904, name: "Wunderlist" }
