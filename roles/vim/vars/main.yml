@@ -47,6 +47,7 @@ vim:
     - { name: "vim-scripts/jQuery", description: "Syntax file for jQuery", active: true }
     - { name: "vim-scripts/PDV--phpDocumentor-for-Vim", description: "Provides really comfortable generation of phpDocumentor doc blocks for PHP4 & 5", active: true }
     - { name: "vim-scripts/SearchComplete", description: "Tab completion of words inside of a search ('/')", active: true }
-    - { name: "vim-scripts/Smart-Tabs", description: "Use tabs for indent, spaces for alignment ", active: true }
+    - { name: "vim-scripts/Smart-Tabs", description: "Use tabs for indent, spaces for alignment ", active: false }
     - { name: "vim-scripts/ZoomWin", description: "Zoom in/out of windows (toggle between one window and multi-window)", active: true }
     - { name: "Xuyuanp/nerdtree-git-plugin", description: "A plugin of NERDTree showing git status", active: true }
+    - { name: "joonty/vim-phpqa", description: "PHP QA tools for vim", active: true }

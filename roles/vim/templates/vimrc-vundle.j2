@@ -551,3 +551,28 @@ nnoremap <c-g> :call SelectaIdentifier()<cr>
 
 " For tagbar plugin
 nmap <F8> :TagbarToggle<CR>
+
+" NERD Tree Toggle
+nmap <F9> :NERDTreeToggle<CR>
+
+" Pass arguments to phpcs binary
+let g:phpqa_codesniffer_args = "--standard=PSR2 --tab-width=4"
+" Run codesniffer on save (default = 1)
+let g:phpqa_codesniffer_autorun = 1
+" Run mess detector on save (default = 1)
+let g:phpqa_messdetector_autorun = 1
+" Show code coverage on load (default = 0)
+let g:phpqa_codecoverage_autorun = 0
+" Stop the location list opening automatically
+let g:phpqa_open_loc = 1
+
+" vim syntastic options
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_php_phpcs_args = "--standard=PSR2 --tab-width=4"
