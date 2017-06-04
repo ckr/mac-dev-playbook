@@ -43,6 +43,12 @@ with something like:
 $ ansible-playbook home.yml --skip-tags="network,packages"
 ```
 
+You can also run only specified tags with something like:
+
+```
+$ ansiple-playbook home.yml --tags="vimrc,vim-plugins"
+```
+
 If you want to install/configure only certain parts, replace `home.yml` in the commands
 above with of the other playbooks.
 
