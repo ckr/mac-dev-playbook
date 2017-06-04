@@ -22,6 +22,7 @@ desktop:
     - cowsay
     - kubernetes-cli
     - asciinema
+    - mas
   pythonTools:
     - glances
   applications:
@@ -48,3 +49,7 @@ desktop:
     - viber
     - istat-menus
     - superduper
+  mas_upgrade_all_apps: 0
+  appstore:
+    - { id: 426410278, name: "Flexiglass" }
+    - { id: 587769990, name: "EyeFriendly" }
