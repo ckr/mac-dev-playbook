@@ -112,3 +112,8 @@ if [ -f ~/.phpbrew/bashrc ]; then
 	#export PHPBREW_SET_PROMPT=1
 	export PHPBREW_RC_ENABLE=1
 fi
+
+# Changed prompt to only show current folder
+prompt_dir () {
+    prompt_segment blue black "`basename ${PWD/#$HOME/'~'}`"
+}
