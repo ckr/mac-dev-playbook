@@ -26,5 +26,22 @@
 
 - name: Clone zsh autosuggestions
   git:
-    repo:https://github.com/zsh-users/zsh-autosuggestions
+    repo=https://github.com/zsh-users/zsh-autosuggestions
     dest={{ ansible_user_dir }}/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+  tags:
+    - terminal
+    - plugins
+
+- name: Ensure custom themes folder exists
+  file: path={{ ansible_user_dir }}/.oh-my-zsh/custom/themes mode=0755 state=directory
+  tags:
+    - terminal
+    - themes
+
+- name: Clone prowerlevel9k theme
+  git:
+    repo=https://github.com/bhilburn/powerlevel9k.git
+    dest={{ ansible_user_dir }}/.oh-my-zsh/custom/themes/powerlevel9k
+  tags:
+    - terminal
+    - themes
