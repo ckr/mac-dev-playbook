@@ -115,6 +115,10 @@ if [ -f ~/.phpbrew/bashrc ]; then
 fi
 
 # Changed prompt to only show current folder
-prompt_dir () {
-    prompt_segment blue black "`basename ${PWD/#$HOME/'~'}`"
-}
+#prompt_dir () {
+#    prompt_segment blue black "`basename ${PWD/#$HOME/'~'}`"
+#}
+
+# Powerlevel theme settings
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir rbenv virtualenv vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(dir_writable status root_indicator background_jobs history time)
