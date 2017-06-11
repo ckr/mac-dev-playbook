@@ -38,6 +38,12 @@
     - terminal
     - themes
 
+- name: Ensute powerlevel9k theme folder exists
+  file: path={{ ansible_user_dir }}/.oh-my-zsh/custom/themes/powerlevel9k mode=0755 state=directory
+  tags:
+    - terminal
+    - themes
+
 - name: Clone prowerlevel9k theme
   git:
     repo=https://github.com/bhilburn/powerlevel9k.git
