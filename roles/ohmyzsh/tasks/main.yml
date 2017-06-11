@@ -15,7 +15,7 @@
 - name: Cloning oh-my-zsh
   git:
     repo=https://github.com/robbyrussell/oh-my-zsh
-    dest=~/.oh-my-zsh
+    dest={{ ansible_user_dir }}/.oh-my-zsh
   tags:
     - cloning
 
@@ -23,3 +23,8 @@
   shell: chsh -s $(grep /zsh$ /etc/shells | tail -1)
   tags:
     - terminal
+
+- name: Clone zsh autosuggestions
+  git:
+    repo:https://github.com/zsh-users/zsh-autosuggestions
+    dest={{ ansible_user_dir }}/.oh-my-zsh/custom/plugins/zsh-autosuggestions
