@@ -6,5 +6,5 @@ dotfiles:
     - tmux-cssh
     - rlwrap
     - reattach-to-user-namespace --wrap-pbcopy-and-pbpaste  
-dependenciesGem:
+  dependenciesGem:
     - i2cssh
