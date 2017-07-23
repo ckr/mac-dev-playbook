@@ -26,6 +26,7 @@
     - ./bin/*
   tags:
     - files
+    - binfiles
 
 - name: Install dependencies (brew)
   homebrew: name={{ item }} state=present
