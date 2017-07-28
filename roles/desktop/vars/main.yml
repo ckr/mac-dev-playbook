@@ -49,6 +49,7 @@ desktop:
     - viber
     - istat-menus
     - superduper
+    - ssh-tunnel-manager
   mas_upgrade_all_apps: 0
   appstore:
     - { id: 426410278, name: "Flexiglass" }
