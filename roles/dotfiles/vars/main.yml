@@ -3,6 +3,7 @@ dotfiles:
     - bash-completion
     - ack
     - links
+    - tmux
     - tmux-cssh
     - rlwrap
     - reattach-to-user-namespace --wrap-pbcopy-and-pbpaste  
