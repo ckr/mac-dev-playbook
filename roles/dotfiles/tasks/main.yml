@@ -28,6 +28,12 @@
     - files
     - binfiles
 
+- name: Copy dotfiles files with template
+  template: src="path_exports.j2" dest={{ ansible_user_dir }}/.path_exports
+  tags:
+    - files
+    - dotaliases
+
 - name: Install reattach-to-user-namespace --wrap-pbcopy-and-pbpaste
   homebrew: name="reattach-to-user-namespace" install_options="--wrap-pbcopy-and-pbpaste" state=present
   when: ansible_pkg_mgr == "homebrew"
