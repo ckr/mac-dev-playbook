@@ -15,7 +15,6 @@ vim:
     - .vim/undodir
   dependencies:
     - selecta
-    - reattach-to-user-namespace
     - neovim
   vundle:
     - { name: "Vundle.vim", repo: "https://github.com/VundleVim/Vundle.vim.git" }
