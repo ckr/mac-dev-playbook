@@ -31,8 +31,6 @@ desktop:
     - alfred
     - atom
     - bartender
-    - brackets
-    - cord
     - docker
     - dropbox
     - flexiglass
@@ -54,7 +52,6 @@ desktop:
   appstore:
     - { id: 426410278, name: "Flexiglass" }
     - { id: 587769990, name: "EyeFriendly" }
-    - { id: 921458519, name: "DrCleaner" }
     - { id: 425424353, name: "The Unarchiver" }
     - { id: 475260933, name: "HardwareGrowler" }
     - { id: 866773894, name: "Quiver" }
