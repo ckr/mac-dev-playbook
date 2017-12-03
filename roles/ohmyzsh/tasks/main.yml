@@ -7,8 +7,14 @@
     - packages
     - terminal
 
+- name: check if ~/.zshrc exists
+  stat:
+    path: {{ ansible_user_dir}}/.zshrc
+  register: stat_zshrc
+
 - name: Backing up existing ~/.zshrc
   copy: src={{ ansible_user_dir }}/.zshrc dest={{ ansible_user_dir }}/.zshrc.orig
+  when: stat_zshrc.stat.exists == True
   tags:
     - files
 
