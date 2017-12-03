@@ -9,6 +9,8 @@ export DEFAULT_USER=ckr
 #ZSH_THEME="robbyrussell"
 #ZSH_THEME="half-life"
 #ZSH_THEME="agnoster"
+#ZSH_THEME="spaceship"
+POWERLEVEL9K_MODE='awesome-fontconfig'
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Uncomment the following line to use case-sensitive completion.
@@ -53,7 +55,7 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git composer common-aliases docker phing osx brew-cask sudo heimdall tmux tmuxinator zsh-autosuggestions z)
+plugins=(git composer common-aliases docker phing osx sudo zsh-autosuggestions z)
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -82,6 +84,10 @@ if [ -f $ZSH/oh-my-zsh.sh ]; then
   source $ZSH/oh-my-zsh.sh
 fi
 
+# You may need to manually set your language environment
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
 # Load the aliases file
 if [ -f ~/.aliases ]; then
 	. ~/.aliases
@@ -107,20 +113,19 @@ if [ -f ~/.other_exports ]; then
 	. ~/.other_exports
 fi
 
-# PHPBrew
-if [ -f ~/.phpbrew/bashrc ]; then
-	source ~/.phpbrew/bashrc
-	#export PHPBREW_SET_PROMPT=1
-	export PHPBREW_RC_ENABLE=1
-fi
-
 # Changed prompt to only show current folder
 #prompt_dir () {
 #    prompt_segment blue black "`basename ${PWD/#$HOME/'~'}`"
 #}
 
 # Powerlevel theme settings
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir rbenv virtualenv pyenv vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(dir_writable status root_indicator background_jobs history time)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir virtualenv vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(dir_writable status root_indicator rvm php_version pyenv aws background_jobs history time)
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 POWERLEVEL9K_SHORTEN_DELIMITER='..'
+
+
+# Spaceship theme settings
+#if [ -f ~/.spaceship.conf ]; then
+#	source ~/.spaceship.conf
+#fi
