@@ -26,6 +26,7 @@ desktop:
     - nikto
     - sqlmap
     - hydra
+    - wpscan
   pythonTools:
     - glances
   applications:
