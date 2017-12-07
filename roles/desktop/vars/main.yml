@@ -23,6 +23,9 @@ desktop:
     - kubernetes-cli
     - asciinema
     - mas
+    - nikto
+    - sqlmap
+    - hydra
   pythonTools:
     - glances
   applications:
@@ -48,6 +51,9 @@ desktop:
     - istat-menus
     - superduper
     - ssh-tunnel-manager
+    - wireshark
+    - owasp-zap
+    - metasploit
   mas_upgrade_all_apps: 0
   appstore:
     - { id: 426410278, name: "Flexiglass" }
