@@ -19,6 +19,13 @@
   tags:
     - tweeks
 
+- name: Enable automatic updates
+  command: defaults write /Library/Preferences/com.apple.SoftwareUpdate AutomaticCheckEnabled -int 1
+  become: true
+  become_user: root
+  tags:
+    - tweeks
+
 - name: Restart dock
   command: killall Dock
   tags:

@@ -9,7 +9,7 @@
 
 - name: check if ~/.zshrc exists
   stat:
-    path: {{ ansible_user_dir}}/.zshrc
+    path: "{{ ansible_user_dir}}/.zshrc"
   register: stat_zshrc
 
 - name: Backing up existing ~/.zshrc
