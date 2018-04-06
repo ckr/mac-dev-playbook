@@ -4,6 +4,21 @@
   tags:
     - tweeks
 
+- name: Enable screensaver
+  command: defaults write com.apple.screensaver askForPassword -int 0.0
+  tags:
+    - tweeks
+
+- name: Remove screensaver token
+  command: defaults write com.apple.screensaver tokenRemovalAction -int 0
+  tags:
+    - tweeks
+
+- name: Change screensaver ask for password delay
+  command: defaults write com.apple.screensaver askForPasswordDelay -float 0.0
+  tags:
+    - tweeks
+
 - name: Restart dock
   command: killall Dock
   tags:
