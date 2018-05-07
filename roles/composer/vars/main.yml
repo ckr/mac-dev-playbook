@@ -2,3 +2,4 @@ composer:
   dependenciesBrew:
     - php70
     - composer
+    - deployer
