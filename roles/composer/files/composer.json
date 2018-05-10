@@ -1,18 +1,8 @@
 {
     "require": {
-        "behat/behat": "^3.2",
-        "squizlabs/php_codesniffer": "^3.0",
-        "phpmd/phpmd": "^2.6",
-        "friendsofphp/php-cs-fixer": "^2.11",
-        "phpstan/phpstan": "^0.9.2",
-        "phploc/phploc": "^4.0",
+        "webysther/composer-plugin-qa": "^1.0",
         "povils/phpmnd": "^2.0",
-        "wapmorgan/php-code-fixer": "^2.0",
-        "phpmetrics/phpmetrics": "^2.3",
-        "sensiolabs/security-checker": "^4.1",
-        "sebastian/phpcpd": "^4.0",
-        "phpunit/php-code-coverage": "^6.0",
-        "phpunit/phpunit": "^7.1",
+        "behat/behat": "^3.4",
         "phing/phing": "^2.16"
     }
 }
