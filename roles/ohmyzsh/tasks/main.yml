@@ -11,7 +11,9 @@
   stat:
     path: "{{ ansible_user_dir}}/.zshrc"
   register: stat_zshrc
-
+  tags:
+    - files
+    
 - name: Backing up existing ~/.zshrc
   copy: src={{ ansible_user_dir }}/.zshrc dest={{ ansible_user_dir }}/.zshrc.orig
   when: stat_zshrc.stat.exists == True
