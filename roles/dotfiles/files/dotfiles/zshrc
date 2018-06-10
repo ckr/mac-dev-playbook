@@ -121,9 +121,12 @@ fi
 
 # Powerlevel theme settings
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir virtualenv vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(dir_writable status root_indicator rvm php_version pyenv aws background_jobs history time)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(dir_writable status root_indicator rvm rbenv php_version pyenv aws background_jobs history time)
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 POWERLEVEL9K_SHORTEN_DELIMITER='..'
+POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="╭"
+POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="╰❯ "
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 
 
 # Spaceship theme settings
