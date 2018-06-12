@@ -89,6 +89,11 @@ fi
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
+# load fonts
+if [ -d ~/.fonts ]; then
+	source ~/.fonts/*.sh
+fi
+
 # Load the aliases file
 if [ -f ~/.aliases ]; then
 	. ~/.aliases
@@ -127,7 +132,6 @@ POWERLEVEL9K_SHORTEN_DELIMITER='..'
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="╭"
 POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="╰❯ "
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-
 
 # Spaceship theme settings
 #if [ -f ~/.spaceship.conf ]; then
