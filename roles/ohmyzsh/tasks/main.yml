@@ -60,6 +60,32 @@
     - terminal
     - themes
 
+- name: Ensute spaceship-prompt theme folder exists
+  file: path={{ ansible_user_dir }}/.oh-my-zsh/custom/themes/spaceship-prompt mode=0755 state=directory
+  tags:
+    - terminal
+    - themes
+    - spaceship
+
+- name: Clone spaceship-prompt theme
+  git:
+    repo=https://github.com/denysdovhan/spaceship-prompt.git
+    dest={{ ansible_user_dir }}/.oh-my-zsh/custom/themes/spaceship-prompt
+  tags:
+    - terminal
+    - themes
+    - spaceship
+
+- name: Symlink spaceship.zsh-theme to your oh-my-zsh custom themes directory
+  file:
+    src: "{{ ansible_user_dir }}/.oh-my-zsh/custom/themes/spaceship-prompt/spaceship.zsh-theme"
+    dest: "{{ ansible_user_dir }}/.oh-my-zsh/custom/themes/spaceship.zsh-theme"
+    state: link
+  tags:
+    - terminal
+    - themes
+    - spaceship
+
 - name: Copy dotfiles
   copy: src={{ item }} dest={{ ansible_user_dir }}/.{{ item | basename }}
   with_fileglob:
@@ -67,3 +93,4 @@
   tags:
     - files
     - dotaliases
+    - spaceship
