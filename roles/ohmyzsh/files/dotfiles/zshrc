@@ -119,6 +119,11 @@ if [ -f ~/.other_exports ]; then
 	. ~/.other_exports
 fi
 
+# Load funcitons
+if [ -f ~/.functions ]; then
+	. ~/.functions
+fi
+
 # Changed prompt to only show current folder
 #prompt_dir () {
 #    prompt_segment blue black "`basename ${PWD/#$HOME/'~'}`"
