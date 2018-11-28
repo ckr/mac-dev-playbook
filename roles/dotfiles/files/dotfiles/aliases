@@ -47,3 +47,9 @@ alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && kil
 # Hide/show all desktop icons (useful when presenting)
 alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
 alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+
+# Kubectl aliases
+alias k='kubectl'
+alias kn='kubectl config set-context $(kubectl config current-context) --namespace '
+alias kexec='kubectl run -it --rm --restart=Never --image ubuntu:latest $USER-hacking -- /bin/bash'
+alias kgap='kubectl get pods --all-namespaces'
