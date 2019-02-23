@@ -86,6 +86,20 @@
     - themes
     - spaceship
 
+- name: Ensure .oh-my-zsh/cutom/plugins/heimdall folder exists
+  file: path={{ ansible_user_dir}}/.oh-my-zsh/custom/plugins/heimdall state=directory
+  tags:
+    - files
+    - heimdall
+
+- name: Copy oh-my-zsh custom plugin files
+  copy: src={{ item }} dest={{ ansible_user_dir }}/.oh-my-zsh/custom/plugins/heimdall/{{ item | basename }} mode=ug+rwx,o+rx
+  with_fileglob:
+    - ./heimdall/*
+  tags:
+    - files
+    - heimdall
+
 - name: Copy dotfiles
   copy: src={{ item }} dest={{ ansible_user_dir }}/.{{ item | basename }}
   with_fileglob:
