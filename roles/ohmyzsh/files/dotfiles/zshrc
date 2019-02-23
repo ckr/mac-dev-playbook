@@ -96,32 +96,32 @@ fi
 
 # Load the aliases file
 if [ -f ~/.aliases ]; then
-	. ~/.aliases
+	source ~/.aliases
 fi
 
 # Load the profile file
 if [ -f ~/.profile ]; then
-    . ~/.profile
+    source ~/.profile
 fi
 
 # Load the private file
 if [ -f ~/.private ]; then
-    . ~/.private
+    source ~/.private
 fi
 
 # Load path export overwrites
 if [ -f ~/.path_exports ]; then
-	. ~/.path_exports
+	source ~/.path_exports
 fi
 
 # Load other exports
 if [ -f ~/.other_exports ]; then
-	. ~/.other_exports
+	source ~/.other_exports
 fi
 
 # Load funcitons
 if [ -f ~/.functions ]; then
-	. ~/.functions
+	source ~/.functions
 fi
 
 # Changed prompt to only show current folder
