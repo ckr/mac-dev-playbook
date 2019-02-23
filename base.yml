@@ -4,10 +4,11 @@
 - name: Base setup
   hosts: localhost
   roles:
-    - ohmyzsh
+    # - ohmyzsh
     - dotfiles
     - vim
     - git
     - composer
     - mactweaks
-    - terminal
+    # - terminal
+    - zplug
