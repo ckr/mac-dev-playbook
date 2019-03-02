@@ -1,11 +1,9 @@
 export DEFAULT_USER=ckr
-export EDITOR='vim'
+#export EDITOR='vim'
 
 export ZPLUG_HOME=/usr/local/opt/zplug
 # Load zplug init
-if [ -d $ZPLUG_HOME ]; then
-	source $ZPLUG_HOME/init.zsh
-fi
+[ -d $ZPLUG_HOME ] && source $ZPLUG_HOME/init.zsh
 
 #history
 export HISTFILE=~/.zsh_history # Where it gets saved
@@ -60,12 +58,12 @@ fi
 
 zplug "djui/alias-tips"
 
-zplug "psprint/zsh-navigation-tools"
-if zplug check "psprint/zsh-navigation-tools"; then
-	autoload znt-history-widget
-	zle -N znt-history-widget
-	bindkey "^R" znt-history-widget
-fi
+# zplug "psprint/zsh-navigation-tools"
+# if zplug check "psprint/zsh-navigation-tools"; then
+# 	autoload znt-history-widget
+# 	zle -N znt-history-widget
+# 	bindkey "^R" znt-history-widget
+# fi
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
@@ -76,39 +74,28 @@ if ! zplug check --verbose; then
 fi
 
 # load fonts
-if [ -d ~/.fonts ]; then
-    source ~/.fonts/*.sh
-fi
+[ -d ~/.fonts ] && source ~/.fonts/*.sh
 
 # Load the aliases file
-if [ -f ~/.aliases ]; then
-	source ~/.aliases
-fi
+[ -f ~/.aliases ] && source ~/.aliases
 
 # Load the profile file
-if [ -f ~/.profile ]; then
-    source ~/.profile
-fi
+[ -f ~/.profile ] && source ~/.profile
 
 # Load the private file
-if [ -f ~/.private ]; then
-    source ~/.private
-fi
+[ -f ~/.private ] && source ~/.private
 
 # Load path export overwrites
-if [ -f ~/.path_exports ]; then
-	source ~/.path_exports
-fi
+[ -f ~/.path_exports ] && source ~/.path_exports
 
 # Load other exports
-if [ -f ~/.other_exports ]; then
-	source ~/.other_exports
-fi
+[ -f ~/.other_exports ] && source ~/.other_exports
 
 # Spaceship theme settings
-if [ -f ~/.spaceship.conf ]; then
-	source ~/.spaceship.conf
-fi
+[ -f ~/.spaceship.conf ] && source ~/.spaceship.conf
+
+# load fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # source plugins and add commands to the PATH
 zplug load

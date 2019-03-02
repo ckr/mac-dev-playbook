@@ -3,3 +3,4 @@ zplug:
     - zsh
     - git
     - zplug
+    - fzf
