@@ -6,5 +6,6 @@ dotfiles:
     - tmux
     - tmux-cssh
     - rlwrap
+    - sslscan
   dependenciesGem:
     - i2cssh
