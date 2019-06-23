@@ -4,7 +4,6 @@ dotfiles:
     - ack
     - links
     - tmux
-    - tmux-cssh
     - rlwrap
     - sslscan
   dependenciesGem:
