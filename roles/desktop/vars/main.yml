@@ -19,7 +19,6 @@ desktop:
     - tree
     - watch
     - gpg
-    - cowsay
     - kubernetes-cli
     - asciinema
     - mas
@@ -54,7 +53,6 @@ desktop:
     - ssh-tunnel-manager
     - wireshark
     - owasp-zap
-    - metasploit
   mas_upgrade_all_apps: 0
   appstore:
     - { id: 426410278, name: "Flexiglass" }
