@@ -1,11 +1,3 @@
----
-- name: Install php tap (brew)
-  homebrew_tap: name="homebrew/homebrew-php" state=present
-  when: ansible_pkg_mgr == "homebrew"
-  tags:
-    - packages
-    - network
-
 - name: Install composer dependencies (brew)
   homebrew: name={{ item }} state=present
   with_items: "{{ composer.dependenciesBrew }}"
