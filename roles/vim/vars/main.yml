@@ -44,7 +44,7 @@ vim:
     - { name: "vim-airline/vim-airline", description: "lean and mean status/tabline for vim that is light as air", active: true }
     - { name: "vim-airline/vim-airline-themes", description: "A collection of themes for vim-airline", active: true }
     - { name: "vim-php/tagbar-phpctags.vim", description: "Using phpctags to generate php ctags index for vim plugin tagbar", active: false }
-    - { name: "vim-scripts/CSApprox", description: "Make gvim-only colorschemes work transparently in terminal vim", active: true }
+    - { name: "vim-scripts/CSApprox", description: "Make gvim-only colorschemes work transparently in terminal vim", active: false }
     - { name: "vim-scripts/jQuery", description: "Syntax file for jQuery", active: true }
     - { name: "vim-scripts/PDV--phpDocumentor-for-Vim", description: "Provides really comfortable generation of phpDocumentor doc blocks for PHP4 & 5", active: true }
     - { name: "vim-scripts/SearchComplete", description: "Tab completion of words inside of a search ('/')", active: true }
