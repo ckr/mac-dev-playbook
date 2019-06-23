@@ -28,12 +28,13 @@
     - files
     - vimrc
 
-- name: Run vundle plugin install
-  shell: vim +PluginInstall +qall
-  register: vim_plugins_installed
-  tags:
-    - vim-plugins
-    - vim-plugins-install
+#Does not work yet
+#- name: Run vundle plugin install
+#  shell: vim +PluginInstall +qall
+#  register: vim_plugins_installed
+#  tags:
+#    - vim-plugins
+#    - vim-plugins-install
 
 # Does not work yet
 # - name: Run vundle plugin clean
