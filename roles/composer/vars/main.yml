@@ -1,5 +1,5 @@
 composer:
   dependenciesBrew:
-    - php70
+    - php
     - composer
     - deployer
