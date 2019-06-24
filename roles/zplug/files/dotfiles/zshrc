@@ -5,6 +5,9 @@ export ZPLUG_HOME=/usr/local/opt/zplug
 # Load zplug init
 [ -d $ZPLUG_HOME ] && source $ZPLUG_HOME/init.zsh
 
+#possible fix for delete key
+< bindkey "^[[3~" delete-char
+
 #history
 export HISTFILE=~/.zsh_history # Where it gets saved
 export HISTSIZE=10000
