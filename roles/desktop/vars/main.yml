@@ -11,6 +11,7 @@ desktop:
     - pwgen
     - python
     - python3
+    - pyenv
     - rbenv
     - rbenv-default-gems
     - ruby
