@@ -73,6 +73,10 @@
     ra = !git r --all
     l = "!. ~/.githelpers && pretty_git_log"
     la = !git l --all
+    e = "!. ~/.githelpers && export_git_log"
+    audit = "!. ~/.githelpers && export_git_log_audit"
+    df = "log -p --"
+    fzf = "!git checkout $(git branch | fzf --height 40% --border)"
 [difftool "sourcetree"]
     cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 [mergetool "sourcetree"]
