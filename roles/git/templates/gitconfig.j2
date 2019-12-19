@@ -77,6 +77,8 @@
     audit = "!. ~/.githelpers && export_git_log_audit"
     df = "log -p --"
     fzf = "!git checkout $(git branch | fzf --height 40% --border)"
+    dt = !git tag -l | xargs git tag -d && git fetch -t
+    pt = push --tags
 [difftool "sourcetree"]
     cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 [mergetool "sourcetree"]
