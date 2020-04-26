@@ -4,6 +4,16 @@
   tags:
     - tweeks
 
+- name: Change dock autohide to true
+  command: defaults write com.apple.dock autohide -int 1
+  tags:
+    - tweeks
+
+- name: Change dock possition to left
+  command: defaults write com.apple.dock orientation -string left
+  tags:
+    - tweeks
+
 - name: Enable screensaver
   command: defaults write com.apple.screensaver askForPassword -int 1
   tags:
