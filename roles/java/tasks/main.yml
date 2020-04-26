@@ -1,6 +1,6 @@
 ---
 - name: Install java using brew cask
-  homebrew: name="java" state=present
+  homebrew: name="openjdk" state=present
   when: ansible_pkg_mgr == "homebrew"
   tags:
     - packages
