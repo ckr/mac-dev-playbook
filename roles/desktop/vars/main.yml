@@ -33,12 +33,12 @@ desktop:
     - 1password
     - aerial
     - alfred
-    - atom
+    - visual-studio-code
     - bartender
     - docker
     - dropbox
     - flexiglass
-    - franz
+    - wavebox
     - google-chrome
     - iterm2
     - sequel-pro
@@ -50,7 +50,6 @@ desktop:
     - vagrant-manager
     - viber
     - istat-menus
-    - superduper
     - ssh-tunnel-manager
     - wireshark
     - owasp-zap
@@ -66,4 +65,3 @@ desktop:
     - { id: 924726344, name: "Deliveries" }
     - { id: 430255202, name: "Mactracker" }
     - { id: 865500966, name: "feedly" }
-    - { id: 410628904, name: "Wunderlist" }
