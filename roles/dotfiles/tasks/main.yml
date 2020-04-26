@@ -34,8 +34,8 @@
     - files
     - dotaliases
 
-- name: Install reattach-to-user-namespace --wrap-pbcopy-and-pbpaste
-  homebrew: name="reattach-to-user-namespace" install_options="--wrap-pbcopy-and-pbpaste" state=present
+- name: Install reattach-to-user-namespace
+  homebrew: name="reattach-to-user-namespace" state=present
   when: ansible_pkg_mgr == "homebrew"
   tags:
     - packages
