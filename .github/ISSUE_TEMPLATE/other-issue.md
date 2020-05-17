@@ -1,6 +1,6 @@
 ---
 name: Other issue
-about: Describe this issue template's purpose here.
+about: Any other issue
 title: "[OTHER]"
 labels: ''
 assignees: ckr
