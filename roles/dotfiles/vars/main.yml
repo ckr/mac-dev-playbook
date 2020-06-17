@@ -6,5 +6,8 @@ dotfiles:
     - tmux
     - rlwrap
     - sslscan
+    - lolcat
+    - figlet
+    - cowsay
   dependenciesGem:
     - i2cssh

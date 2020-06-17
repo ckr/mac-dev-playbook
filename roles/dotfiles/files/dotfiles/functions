@@ -1,5 +1,11 @@
 # functions
 
+lolbanner() {
+    echo
+    figlet -f ~/.fonts/3d.flf $* | lolcat
+    echo
+}
+
 #Get passed argument and check if is set as an environment varibale and unset it.
 printEnvAndUnset() {
     local var_name="$1"
