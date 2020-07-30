@@ -1,8 +1,6 @@
 DOTFILES
 ========
 
-[![Code Climate](https://codeclimate.com/github/ckr/dotfiles/badges/gpa.svg)](https://codeclimate.com/github/ckr/dotfiles) | [![Issue Count](https://codeclimate.com/github/ckr/dotfiles/badges/issue_count.svg)](https://codeclimate.com/github/ckr/dotfiles) | [![Codacy Badge](https://api.codacy.com/project/badge/Grade/01f384147b3f4390aa8ac7fbe2dc0a5f)](https://www.codacy.com/app/ckr/dotfiles)
-
 This repository contains most of my "movable" setup.  Mostly these are configurations
 for zsh shell, git version control, and Vim text editor.
 
