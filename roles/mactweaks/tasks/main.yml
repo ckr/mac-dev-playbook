@@ -14,6 +14,16 @@
   tags:
     - tweeks
 
+- name: Change dock show recents to false
+  command: defaults write com.apple.dock show-recents -int 0
+  tags:
+    - tweeks
+
+- name: Change dock tilesize to 50
+  command: defaults write com.apple.dock tilesize -int 50
+  tags:
+    - tweeks
+
 - name: Enable screensaver
   command: defaults write com.apple.screensaver askForPassword -int 1
   tags:
