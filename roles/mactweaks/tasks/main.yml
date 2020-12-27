@@ -3,26 +3,43 @@
   command: defaults write com.apple.dock autohide-time-modifier -int 0
   tags:
     - tweeks
+    - dock
 
 - name: Change dock autohide to true
   command: defaults write com.apple.dock autohide -int 1
   tags:
     - tweeks
+    - dock
 
 - name: Change dock possition to left
   command: defaults write com.apple.dock orientation -string left
   tags:
     - tweeks
+    - dock
 
 - name: Change dock show recents to false
   command: defaults write com.apple.dock show-recents -int 0
   tags:
     - tweeks
+    - dock
 
 - name: Change dock tilesize to 50
   command: defaults write com.apple.dock tilesize -int 50
   tags:
     - tweeks
+    - dock
+
+- name: Backup dock plist file
+  command: cp -a ~/Library/Preferences/com.apple.dock.plist ~/Library/Preferences/com.apple.dock.plist.bak
+  tags:
+    - tweeks
+    - dock
+
+- name: Delete persistent apps from dock
+  command: defaults delete com.apple.dock persistent-apps
+  tags:
+    - tweeks
+    - dock
 
 - name: Enable screensaver
   command: defaults write com.apple.screensaver askForPassword -int 1
@@ -61,3 +78,4 @@
   command: killall Dock
   tags:
     - tweeks
+    - dock
