@@ -47,6 +47,9 @@
     ds = diff --stat=160,120
     dh1 = diff HEAD~1
     revision = describe --tags --always HEAD
+    slast = commit --amend --signoff
+    vc = verify-commit
+    vch = verify-commit HEAD
 
     # Divergence (commits we added and commits remote added)
     div = "!. git-divergence"
