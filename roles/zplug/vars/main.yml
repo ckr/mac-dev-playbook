@@ -1,6 +1,4 @@
 zplug:
   dependenciesBrew:
-    - zsh
-    - git
     - zplug
     - fzf
