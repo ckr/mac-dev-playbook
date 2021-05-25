@@ -20,6 +20,21 @@
   tags:
     - files
 
+- name: Check if fzf is installed
+  stat:
+    path: "/usr/local/bin/fzf"
+  register: stat_fzf
+  tags:
+    - terminal
+    - fzf
+
+- name: Configure fzf
+  shell: $(brew --prefix)/opt/fzf/install --no-bash --no-fish --completion --no-update-rc --key-bindings
+  when: stat_fzf.stat.exists == True
+  tags:
+    - terminal
+    - fzf
+
 - name: Chanching default shell to zsh
   shell: chsh -s $(grep /zsh$ /etc/shells | tail -1)
   when: ansible_facts.user_shell != '/bin/zsh'
