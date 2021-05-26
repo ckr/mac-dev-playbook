@@ -36,3 +36,38 @@
   template: src=gitconfig.j2 dest={{ ansible_user_dir}}/.gitconfig
   tags:
     - files
+
+- name: Check if pinentry-mac is installed
+  stat:
+    path: "/usr/local/bin/pinentry-mac"
+  register: stat_pinentry
+  tags:
+    - git
+    - pinentry
+
+- name: Check if ~/.gnupg/gpg-agent.conf exists
+  stat:
+    path: "~/.gnupg/gpg-agent.conf"
+  register: stat_gpg_agent
+  tags:
+    - git
+    - pinentry
+    - gpg
+
+- name: Check if gpg-agent already configured with pinentry
+  shell: grep -c "^pinentry-program" /usr/local/bin/pinentry-mac || true
+  register: stat_gpg_agent_pinentry
+  tags:
+    - git
+    - pinentry
+    - gpg
+
+- name: Configure gpg-agent to use pinentry-mac
+  lineinfile:
+    dest: ~/.gnupg/gpg-agent.conf
+    line: pinentry-program /usr/local/bin/pinentry-mac
+  when: stat_gpg_agent.stat.exists == True and stat_gpg_agent.stat.exists == True and stat_gpg_agent_pinentry.stdout == "0"
+  tags:
+    - git
+    - pinentry
+    - gpg
