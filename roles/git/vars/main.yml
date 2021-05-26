@@ -10,5 +10,6 @@ git:
       - git-flow-avh
       - git-standup
       - git-quick-stats
+      - pinentry-mac
     links:
       - { src: '{{ ansible_user_dir }}/bin/gn', dest: '{{ ansible_user_dir }}/bin/gn.py' }
