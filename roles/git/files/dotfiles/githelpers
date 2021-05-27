@@ -19,7 +19,17 @@ AUTHOR="%C(bold blue)<%an>%Creset"
 REFS="%C(bold red)%d%Creset"
 SUBJECT="%s"
 
-FORMAT="$HASH}$RELATIVE_TIME}$AUTHOR}$REFS $SUBJECT"
+#"G" for a good (valid) signature
+#"B" for a bad signature
+#"U" for a good signature with unknown validity
+#"X" for a good signature that has expired
+#"Y" for a good signature made by an expired key
+#"R" for a good signature made by a revoked key
+#"E" if the signature cannot be checked (e.g. missing key)
+#"N" for no signature
+SIGNED_COMMIT="%C(bold blue)%G?%Creset"
+
+FORMAT="$HASH}$SIGNED_COMMIT}$RELATIVE_TIME}$AUTHOR}$REFS $SUBJECT"
 EXPORT_FORMAT="%h}%ar}%an}%s"
 
 ANSI_BLACK='\033[30m'
