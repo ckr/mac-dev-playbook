@@ -1,39 +1,52 @@
 ---
-- name: Install useful desktop tools (brew)
-  homebrew: name={{ item }} state=present
-  with_items: "{{ git.dependenciesBrew }}"
-  when: ansible_pkg_mgr == "homebrew"
+- name: Install packages
+  community.general.homebrew:
+    name: "{{ item.name | default(item) }}"
+    install_options: "{{ item.install_options | default(omit) }}"
+    state: present
+  loop: "{{ git_homebrew_packages }}"
   tags:
-    - packages
-    - network
+    - git_homebrew_packages
 
 - name: Copy git dotfiles
-  copy: src={{ item }} dest={{ ansible_user_dir }}/.{{ item | basename }}
+  copy:
+    src: "{{ item }}"
+    dest: "{{ ansible_user_dir }}/.{{ item | basename }}"
   with_fileglob:
-    - ./dotfiles/*
+    - "./dotfiles/*"
   tags:
     - files
 
 - name: Ensure bin/ folder exists
-  file: path={{ ansible_user_dir}}/bin state=directory
+  file:
+    path: "{{ ansible_user_dir }}/bin"
+    state: directory
   tags:
     - files
 
 - name: Copy bin/ files
-  copy: src={{ item }} dest={{ ansible_user_dir }}/bin/{{ item | basename }} mode=ug+rwx,o+rx
+  copy:
+    src: "{{ item }}"
+    dest: "{{ ansible_user_dir }}/bin/{{ item | basename }}"
+    mode: ug+rwx,o+rx
   with_fileglob:
-    - ./bin/*
+    - "./bin/*"
   tags:
     - files
 
 - name: Create symlinks in bin folder
-  file: src={{ item.src }} dest={{ item.dest }} state=link
-  with_items: "{{ git.links }}"
+  file:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    state: link
+  loop: "{{ git_links }}"
   tags:
     - files
 
 - name: Create .gitconfig file
-  template: src=gitconfig.j2 dest={{ ansible_user_dir}}/.gitconfig
+  template:
+    src: gitconfig.j2
+    dest: "{{ ansible_user_dir}}/.gitconfig"
   tags:
     - files
 
@@ -47,7 +60,7 @@
 
 - name: Check if ~/.gnupg/gpg-agent.conf exists
   stat:
-    path: "~/.gnupg/gpg-agent.conf"
+    path: "{{ ansible_user_dir }}/.gnupg/gpg-agent.conf"
   register: stat_gpg_agent
   tags:
     - git
@@ -64,7 +77,7 @@
 
 - name: Configure gpg-agent to use pinentry-mac
   lineinfile:
-    dest: ~/.gnupg/gpg-agent.conf
+    dest: "{{ ansible_user_dir }}/.gnupg/gpg-agent.conf"
     line: pinentry-program /usr/local/bin/pinentry-mac
   when: stat_gpg_agent.stat.exists == True and stat_gpg_agent.stat.exists == True and stat_gpg_agent_pinentry.stdout == "0"
   tags:

@@ -1,0 +1,60 @@
+---
+- name: Install dependencies like zplug
+  community.general.homebrew:
+    name: "{{ item.name | default(item) }}"
+    install_options: "{{ item.install_options | default(omit) }}"
+    state: present
+  loop:
+    - zplug
+    - fzf
+  tags:
+    - zplug
+
+- name: check if ~/.zshrc exists
+  stat:
+    path: "~/.zshrc"
+  register: stat_zshrc
+  tags:
+    - zsh
+    - zsh_config
+
+- name: Backing up existing ~/.zshrc
+  copy:
+    src: ~/.zshrc
+    dest: ~/.zshrc.orig
+  when: stat_zshrc.stat.exists == True
+  tags:
+    - zsh
+    - zsh_cofig
+
+- name: Check if fzf is installed
+  stat:
+    path: "/usr/local/bin/fzf"
+  register: stat_fzf
+  tags:
+    - zsh
+    - fzf
+
+- name: Configure fzf
+  shell: $(brew --prefix)/opt/fzf/install --no-bash --no-fish --completion --no-update-rc --key-bindings
+  when: stat_fzf.stat.exists == True
+  tags:
+    - zsh
+    - fzf
+
+- name: Chanching default shell to zsh
+  shell: chsh -s $(grep /zsh$ /etc/shells | tail -1)
+  when: ansible_facts.user_shell != '/bin/zsh'
+  tags:
+    - terminal
+
+- name: Copy dotfiles
+  copy:
+    src: "{{ item }}"
+    dest: "~/.{{ item | basename }}"
+  with_fileglob:
+    - "files/zplug/*"
+  tags:
+    - files
+    - dotaliases
+    - spaceship

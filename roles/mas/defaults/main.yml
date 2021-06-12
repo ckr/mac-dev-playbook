@@ -1,0 +1,14 @@
+---
+mas_email: ""
+mas_password: ""
+mas_signin_dialog: false
+# Update all
+mas_upgrade_all: false
+# Make sure the following apps are installed/uninstalled
+# Installed List
+mas_installed: []
+# - { id: 425424353, name: "The Unarchiver" }
+# - { id: 425424353, state: latest, name: "The Unarchiver" }
+# Uninstalled List
+mas_uninstalled: []
+# - { id: 715768417, name: "Microsoft Remote Desktop" }

@@ -1,30 +1,25 @@
-- name: Install composer dependencies (brew)
-  homebrew: name={{ item }} state=present
-  with_items: "{{ composer.dependenciesBrew }}"
-  when: ansible_pkg_mgr == "homebrew"
+---
+- name: Install dependencies
+  community.general.homebrew:
+    name: "{{ item.name | default(item) }}"
+    install_options: "{{ item.install_options | default(omit) }}"
+    state: present
+  loop: "{{ composer_homebrew_dependencies }}"
   tags:
-    - packages
-    - network
+    - composer_dependencies
 
-- name: Make sure composer folder exists
-  file: path={{ ansible_user_dir}}/.composer state=directory
+- name: Change default php version
+  community.general.homebrew:
+    name: "{{ composer_defaults_php_version }}"
+    state: linked
   tags:
-    - files
+    - default_php
 
-- name: Copy config.json file
-  copy: src=./config.json dest={{ ansible_user_dir }}/.composer/config.json
+- name: Install global Composer packages.
+  community.general.composer:
+    command: "{{ (item.state | default('present') == 'absent') | ternary('remove', 'require') }}"
+    arguments: "{{ item.name | default(item) }} {{ item.version | default('@stable') }}"
+    global_command: yes
+  loop: "{{ composer_packages }}"
   tags:
-    - files
-
-- name: Copy composer.json file
-  copy: src=./composer.json dest={{ ansible_user_dir }}/.composer/composer.json
-  tags:
-    - files
-
-- name: Run composer global install
-  composer:
-    command: install
-    working_dir: "{{ ansible_user_dir }}/.composer"
-  tags:
-    - packages
-    - composer
+    - composer_packages

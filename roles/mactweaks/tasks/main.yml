@@ -1,81 +1,53 @@
 ---
-- name: Change dock autohide timer to 0
-  command: defaults write com.apple.dock autohide-time-modifier -int 0
-  tags:
-    - tweeks
-    - dock
-
-- name: Change dock autohide to true
-  command: defaults write com.apple.dock autohide -int 1
-  tags:
-    - tweeks
-    - dock
-
-- name: Change dock possition to left
-  command: defaults write com.apple.dock orientation -string left
-  tags:
-    - tweeks
-    - dock
-
-- name: Change dock show recents to false
-  command: defaults write com.apple.dock show-recents -int 0
-  tags:
-    - tweeks
-    - dock
-
-- name: Change dock tilesize to 50
-  command: defaults write com.apple.dock tilesize -int 50
-  tags:
-    - tweeks
-    - dock
-
 - name: Backup dock plist file
   command: cp -a ~/Library/Preferences/com.apple.dock.plist ~/Library/Preferences/com.apple.dock.plist.bak
+  when: mactweaks_backup_dock
   tags:
-    - tweeks
+    - tweaks
     - dock
 
-- name: Delete persistent apps from dock
-  command: defaults delete com.apple.dock persistent-apps
+- name: Install dependencies like dockutil
+  community.general.homebrew:
+    name: "{{ item.name | default(item) }}"
+    install_options: "{{ item.install_options | default(omit) }}"
+    state: present
+  loop: "{{ brew.dependencies }}"
+  when: mactweaks_dock_enable
   tags:
-    - tweeks
     - dock
 
-- name: Enable screensaver
-  command: defaults write com.apple.screensaver askForPassword -int 1
-  tags:
-    - tweeks
+- name: Remove configured Dock items.
+  ansible.builtin.include_tasks: dock-remove.yml
+  when: mactweaks_dock_enable
+  loop: "{{ mactweaks_dock_items_remove }}"
 
-- name: Remove screensaver token
-  command: defaults write com.apple.screensaver tokenRemovalAction -int 0
-  tags:
-    - tweeks
+- name: Ensure required dock items exist.
+  ansible.builtin.include_tasks: dock-add.yml
+  when: mactweaks_dock_enable
+  loop: "{{ mactweaks_dock_items_persist }}"
 
-- name: Change screensaver ask for password delay
-  command: defaults write com.apple.screensaver askForPasswordDelay -float 0.0
-  tags:
-    - tweeks
-
-- name: Enable automatic updates
-  command: defaults write /Library/Preferences/com.apple.SoftwareUpdate AutomaticCheckEnabled -int 1
-  become: true
-  tags:
-    - tweeks
-
-- name: Enable security updates
-  command: defaults write /Library/Preferences/com.apple.SoftwareUpdate ConfigDataInstall -bool true
-  become: true
-  tags:
-    - tweeks
-
-- name: Enable critical updates
-  command: defaults write /Library/Preferences/com.apple.SoftwareUpdate CriticalUpdateInstall -bool true
-  become: true
-  tags:
-    - tweeks
+- name: Ensure dock items are in correct position.
+  ansible.builtin.include_tasks: dock-position.yml
+  when:
+    - mactweaks_dock_enable
+    - item.pos is defined
+    - item.pos > 0
+  loop: "{{ mactweaks_dock_items_persist }}"
 
 - name: Restart dock
   command: killall Dock
   tags:
-    - tweeks
+    - tweaks
     - dock
+
+- name: Run macOS defaults.
+  osx_defaults:
+    domain: "{{ item.domain }}"
+    key: "{{ item.key }}"
+    type: "{{ item.type }}"
+    value: "{{ item.value }}"
+    state: "{{ item.state | default('present') }}"
+  with_items: "{{ mactweaks_system_defaults }}"
+  when: mactweaks_system_enable
+  tags:
+    - osxdefaults

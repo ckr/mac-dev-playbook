@@ -1,0 +1,18 @@
+---
+mactweaks_backup_dock: true
+mactweaks_system_enable: false
+# List your defaults write settings here
+# for example change dock autohide to true
+mactweaks_system_defaults: []
+# - { domain: com.apple.dock, key: autohide, type: int, value: 1 }
+mactweaks_dock_enable: false
+# Dock items to remove.
+mactweaks_dock_items_remove: []
+# - Launchpad
+# - 'App Store'
+# Dock items to add. `pos` parameter is optional and will place the Dock item
+# in a particular position in the Dock.
+mactweaks_dock_items_persist: []
+# - name: "Google Chrome"
+#   path: "/Applications/Google Chrome.app/"
+#   pos: 4

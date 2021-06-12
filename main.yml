@@ -1,0 +1,56 @@
+---
+- hosts: all
+
+  vars_files:
+    - default.config.yml
+
+  pre_tasks:
+    - name: Include playbook home configuration overwrites.
+      include_vars: "{{ item }}"
+      with_fileglob:
+        - "{{ playbook_dir }}/{{ use_config }}.config.yml"
+      when: use_config is defined
+      tags:
+        - always
+    - name: Include playbook uncommited configuration overwrites.
+      include_vars: "{{ item }}"
+      with_fileglob:
+        - "{{ playbook_dir }}/config.yml"
+      tags:
+        - always
+
+  roles:
+    - role: homebrew
+      when: homebrew_enable
+      tags:
+        - homebrew
+    - role: mactweaks
+      when: mactweaks_enable
+      tags:
+        - tweaks
+    - role: composer
+      when: composer_enable
+      tags:
+        - composer
+    - role: mas
+      when: mas_enable
+      tags:
+        - mas
+    - role: dotfiles
+      when: dotfiles_enable
+      tags:
+        - dotfiles
+    - role: git
+      when: git_enable
+      tags:
+        - git
+
+  tasks:
+    - import_tasks: tasks/ssh_keys.yml
+      when: configure_ssh_keys
+      tags:
+        - ssh_keys
+    - import_tasks: tasks/zplug.yml
+      when: configure_zplug
+      tags:
+        - zplug

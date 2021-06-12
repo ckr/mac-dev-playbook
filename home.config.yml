@@ -1,0 +1,222 @@
+---
+# Enable/Disable varius tasks
+configure_ssh_keys: true
+github_ssh_keys_username: ckr
+configure_zplug: true
+
+# Homebrew configuration
+# Enable/Disable this role
+homebrew_enable: false
+homebrew_packages_installed:
+  # final
+  - ack
+  - links
+  - tmux
+  - rlwrap
+  - sslscan
+  - lolcat
+  - figlet
+  - cowsay
+  # from git
+  - coreutils
+  - csshx
+  - fabric
+  - gd
+  - goaccess
+  - htop-osx
+  - percona-toolkit
+  - pssh
+  - pwgen
+  - python
+  - python3
+  - pyenv
+  - rbenv
+  - rbenv-default-gems
+  - ruby
+  - socat
+  - tor
+  - tree
+  - watch
+  - gpg
+  - kubernetes-cli
+  - asciinema
+  - mas
+  - nikto
+  - sqlmap
+  - hydra
+homebrew_casks_installed:
+  - google-chrome
+  - amethyst
+  - burp-suite
+  - cakebrew
+  - gpg-suite
+  - zerotier-one
+  - 1password
+  - alfred
+  - visual-studio-code
+  - bartender
+  - docker
+  - dropbox
+  - flexiglass
+  - iterm2
+  - sequel-pro
+  - slack
+  - spotify
+  - istat-menus
+  - rectangle
+  - sublime-text
+
+# Composer configuration
+composer_enable: true
+composer_packages:
+  - name: phing/phing
+  - name: squizlabs/php_codesniffer
+  - name: phpmd/phpmd
+  - name: friendsofphp/php-cs-fixer
+  - name: phploc/phploc
+  - name: wapmorgan/php-deprecation-detector
+  - name: sebastian/phpcpd
+  - name: phpunit/php-code-coverage
+  - name: phpunit/phpunit
+  - name: phpmetrics/phpmetrics
+  - name: phpstan/phpstan
+  - name: povils/phpmnd
+
+# MacTweaks configuration
+mactweaks_enable: true
+mactweaks_system_enable: true
+mactweaks_system_defaults:
+  - { domain: com.apple.dock, key: autohide-time-modifier, type: int, value: 0 }
+  - { domain: com.apple.dock, key: autohide, type: int, value: 0 }
+  - { domain: com.apple.dock, key: orientation, type: string, value: left }
+  - { domain: com.apple.dock, key: show-recents, type: int, value: 0 }
+  - { domain: com.apple.dock, key: tilesize, type: int, value: 50 }
+  - { domain: com.apple.dock, key: largesize, type: float, value: 58 }
+  - { domain: com.apple.screensaver, key: askForPassword, type: int, value: 1 }
+  - { domain: com.apple.screensaver, key: tokenRemovalAction, type: int, value: 0 }
+  - { domain: com.apple.screensaver, key: askForPasswordDelay, type: float, value: 0.0 }
+  # TODO: Fix this ansible is having an issue setting them.
+  # - { domain: /Library/Preferences/com.apple.SoftwareUpdate.plist, key: AutomaticCheckEnabled, type: int, value: 1 }
+  # - { domain: /Library/Preferences/com.apple.SoftwareUpdate.plist, key: ConfigDataInstall, type: bool, value: true }
+  # - { domain: /Library/Preferences/com.apple.SoftwareUpdate.plist, key: CriticalUpdateInstall, type: bool, value: true }
+mactweaks_dock_enable: true
+mactweaks_dock_items_remove:
+  - Safari
+  - Mail
+  - Maps
+  - Photos
+  - FaceTime
+  - Calendar
+  - Contacts
+  - Reminders
+  - Notes
+  - TV
+  - Music
+  - Podcasts
+  - News
+  - 'App Store'
+  - 'System Preferences'
+mactweaks_dock_items_persist:
+  - name: "Launchpad"
+    path: "/System/Applications/Launchpad.app/"
+    section: "apps"
+    pos: 1
+  - name: "Shift"
+    path: "/Applications/Shift.app/"
+    section: "apps"
+    pos: 2
+  - name: "Google Chrome"
+    path: "/Applications/Google Chrome.app/"
+    section: "apps"
+    pos: 3
+  - name: "Notes"
+    path: "/System/Applications/Notes.app/"
+    section: "apps"
+    pos: 4
+  - name: "Things3"
+    path: "/Applications/Things3.app/"
+    section: "apps"
+    pos: 5
+  - name: "System Preferences"
+    path: "/System/Applications/System Preferences.app/"
+    section: "apps"
+    pos: 6
+  - name: "Messages"
+    path: "/System/Applications/Messages.app/"
+    section: "apps"
+    pos: 7
+  - name: "WhatsApp"
+    path: "/Applications/WhatsApp.app/"
+    section: "apps"
+    pos: 8
+  - name: "Messenger"
+    path: "/Applications/Messenger.app/"
+    section: "apps"
+    pos: 9
+  - name: "Quiver"
+    path: "/Applications/Quiver.app/"
+    section: "apps"
+    pos: 10
+  - name: "Notion"
+    path: "/Applications/Notion.app/"
+    section: "apps"
+    pos: 11
+  - name: "Craft"
+    path: "/Applications/Craft.app/"
+    section: "apps"
+    pos: 12
+  - name: "Pocket"
+    path: "/Applications/Pocket.app/"
+    section: "apps"
+    pos: 13
+  - name: "News"
+    path: "/System/Applications/News.app/"
+    section: "apps"
+    pos: 14
+  - name: "Home"
+    path: "/System/Applications/Home.app/"
+    section: "apps"
+    pos: 15
+  - name: "iTerm"
+    path: "/Applications/iTerm.app/"
+    section: "apps"
+    pos: 16
+  - name: "Dropbox"
+    path: "/Users/ckr/Dropbox/"
+    section: "others"
+    pos: 1
+  - name: "Downloads"
+    path: "/Users/ckr/Downloads/"
+    section: "others"
+    pos: 2
+
+# MAS configuration
+mas_enable: true
+mas_signin_dialog: true
+# Update all
+mas_upgrade_all: false
+# Make sure the following apps are installed/uninstalled
+# Installed List
+mas_installed:
+  - { id: 866773894, name: "Quiver" }
+  - { id: 485812721, name: "TweetDeck" }
+  - { id: 1491071483, name: "Tot" }
+  - { id: 409907375, name: "Remote Desktop" }
+  - { id: 1480068668, name: "Messenger" }
+  - { id: 904280696, name: "Things" }
+  - { id: 865500966, name: "feedly" }
+  - { id: 1516894961, name: "Codye" }
+  - { id: 1303222628, name: "Paprika Recipe Manager 3" }
+  - { id: 587769990, name: "EyeFriendly" }
+  - { id: 638161122, name: "YubiKey Personalization Tool" }
+  - { id: 426410278, name: "Flexiglass" }
+  - { id: 425424353, name: "The Unarchiver" }
+  - { id: 924726344, name: "Deliveries" }
+  - { id: 595191960, name: "CopyClip" }
+  - { id: 568494494, name: "Pocket" }
+
+# Git configuration
+git_enable: true
+
+# Dotfiles configuration
+dotfiles_enable: true

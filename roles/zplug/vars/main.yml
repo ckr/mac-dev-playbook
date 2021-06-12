@@ -1,4 +1,0 @@
-zplug:
-  dependenciesBrew:
-    - zplug
-    - fzf

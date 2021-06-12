@@ -1,0 +1,62 @@
+---
+downloads: ~/.ansible-downloads/
+
+# By default everything is disabled
+# Enable the things you need
+
+# Enable/Disable varius tasks
+configure_ssh_keys: false
+# uncomment and configure the following to set
+# your github username otherwise the task will use
+# the username of the user running the deploy
+# github_ssh_keys_username: ckr
+configure_zplug: false
+
+# Homebrew configuration
+# Enable/Disable this role
+homebrew_enable: false
+homebrew_packages_installed:
+  - cowsay
+  - pwgen
+homebrew_casks_installed:
+  - google-chrome
+  - amethyst
+  - burp-suite
+  - cakebrew
+  - gpg-suite
+  - zerotier-one
+  - 1password
+  - alfred
+  - visual-studio-code
+  - bartender
+  - docker
+  - dropbox
+  - flexiglass
+  - iterm2
+  - sequel-pro
+  - slack
+  - spotify
+  - istat-menus
+  - rectangle
+  - sublime-text
+
+# Composer configuration
+# Enable/Disable this role
+composer_enable: false
+# Install packages from composer package manager.
+composer_packages:
+  - name: phing/phing
+  - name: phpunit/phpunit
+
+# MacTweaks configuration
+# Enable/Disable this role
+mactweaks_enable: false
+
+# MAS configuration
+mas_enabled: false
+
+# Git configuration
+git_enable: false
+
+# Dotfiles configuration
+dotfiles_enable: false

@@ -1,5 +1,0 @@
-composer:
-  dependenciesBrew:
-    - php
-    - composer
-    - deployer

@@ -1,60 +1,50 @@
 ---
 - name: Copy dotfiles
-  copy: src={{ item }} dest={{ ansible_user_dir }}/.{{ item | basename }}
+  copy:
+    src: "{{ item }}"
+    dest: "{{ ansible_user_dir }}/.{{ item | basename }}"
   with_fileglob:
-    - ./dotfiles/*
+    - "./dotfiles/*"
   tags:
     - files
     - dotaliases
 
 - name: Ensure bin/ folder exists
-  file: path={{ ansible_user_dir}}/bin state=directory
+  file:
+    path: "{{ ansible_user_dir }}/bin"
+    state: directory
   tags:
-    - files
+    - folders
 
 - name: Ensure ~/work folder exists
-  file: path={{ ansible_user_dir}}/work state=directory
+  file:
+    path: "{{ ansible_user_dir }}/work"
+    state: directory
   tags:
-    - files
+    - folders
 
 - name: Ensure ~/code folder exists
-  file: path={{ ansible_user_dir}}/code state=directory
+  file:
+    path: "{{ ansible_user_dir }}/code"
+    state: directory
+  tags:
+    - folders
 
 - name: Copy bin/ files
-  copy: src={{ item }} dest={{ ansible_user_dir }}/bin/{{ item | basename }} mode=ug+rwx,o+rx
+  copy:
+    src: "{{ item }}"
+    dest: "{{ ansible_user_dir }}/bin/{{ item | basename }}"
+    mode: ug+rwx,o+rx
   with_fileglob:
-    - ./bin/*
+    - "./bin/*"
   tags:
     - files
-    - binfiles
+    - binfile
 
 - name: Copy dotfiles files with template
-  template: src="path_exports.j2" dest={{ ansible_user_dir }}/.path_exports
+  template:
+    src: path_exports.j2
+    dest: "{{ ansible_user_dir }}/.path_exports"
   tags:
     - files
     - dotaliases
-
-- name: Install reattach-to-user-namespace
-  homebrew: name="reattach-to-user-namespace" state=present
-  when: ansible_pkg_mgr == "homebrew"
-  tags:
-    - packages
-    - network
-    - pbcopy
-
-- name: Install dependencies (brew)
-  homebrew: name={{ item }} state=present
-  with_items: "{{ dotfiles.dependenciesBrew }}"
-  when: ansible_pkg_mgr == "homebrew"
-  tags:
-    - packages
-    - network
-
-- name: Install dependencies (gem)
-  gem: name={{ item }} state=present
-  with_items: "{{ dotfiles.dependenciesGem }}"
-  tags:
-    - packages
-    - network
-    - shells
-

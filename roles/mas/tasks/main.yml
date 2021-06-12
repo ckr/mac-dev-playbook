@@ -1,0 +1,61 @@
+---
+- name: Install dependencies like mas
+  community.general.homebrew:
+    name: "{{ item.name | default(item) }}"
+    install_options: "{{ item.install_options | default(omit) }}"
+    state: present
+  loop: "{{ brew.dependencies }}"
+  tags:
+    - mas
+
+- name: Check mas account status
+  command: mas account
+  register: mas_account_status
+  failed_when: mas_account_status.rc > 1
+  check_mode: false
+  changed_when: false
+  tags:
+    - mas
+
+- name: Sign in to mas when email and password are given
+  command: 'mas signin "{{ mas.email }}" "{{ mas.password }}"'
+  register: mas_signin_status
+  when:
+    - mas_account_status.rc == 1
+    - mas_email | bool
+    - mas_password | bool
+    - not mas_signin_dialog
+  tags:
+    - mas
+
+- name: Sign in to mas when email only and prompt for password and MFA
+  command: 'mas signin "{{ mas.email }}" "{{ mas.password }}" --dialog'
+  register: mas_signin_status
+  when:
+    - mas_signin_dialog
+    - mas_account_status.rc == 1
+    - mas_email | bool
+  tags:
+    - mas
+
+- name: Ensure configured mas apps are installed
+  community.general.mas:
+    name: "{{ item.id | default(item) }}"
+    state: "{{ item.state | default('present') }}"
+  loop: "{{ mas_installed }}"
+  tags:
+    - mas
+
+- name: Ensure configured mas apps are not installed
+  community.general.mas:
+    name: "{{ item.id | default(item) }}"
+    state: absent
+  become: yes
+  loop: "{{ mas_uninstalled }}"
+  tags:
+    - mas
+
+- name: Upgrade all installed Mac App Store apps
+  community.general.mas:
+    upgrade_all: yes
+  when: mas_upgrade_all

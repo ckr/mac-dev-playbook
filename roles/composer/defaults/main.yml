@@ -1,0 +1,14 @@
+---
+# Set default php version to 7.2
+# this is required due to some global composer packages
+composer_defaults_php_version: php@7.2
+# List of dependencies before installing composer packages
+composer_homebrew_dependencies:
+  - libiconv
+  - php@7.2
+  - composer
+# Install packages from composer package manager.
+composer_packages: []
+# - name: squizlabs/php_codesniffer
+# - name: phpunit/phpunit
+#   version: '^9.5'

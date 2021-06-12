@@ -1,5 +1,0 @@
-java:
-  dependencies:
-    - gradle
-    - maven
-    - groovy

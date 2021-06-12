@@ -1,9 +1,10 @@
 [user]
-    name = {{ git.user.name }}
-    email = {{ git.user.email }}
-    signingkey = {{ git.user.signingkey }}
+    name = {{ git_user.name }}
+    email = {{ git_user.email }}
+    signingkey = {{ git_user.signingkey }}
+    username = {{ git_user.username }}
 [github]
-    user = {{ git.user.github.username }}
+    user = {{ git_github.username }}
 [commit]
     gpgSign = true
 [core]
@@ -80,10 +81,5 @@
     fzf = "!git checkout $(git branch | fzf --height 40% --border)"
     dt = !git tag -l | xargs git tag -d && git fetch -t
     pt = push --tags
-[difftool "sourcetree"]
-    cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-[mergetool "sourcetree"]
-    cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-    trustExitCode = true
 [credential]
   	helper = osxkeychain

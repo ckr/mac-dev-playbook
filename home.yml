@@ -1,6 +1,0 @@
-# One Playbook to bring them all and in the darkness bind them
----
-- include: base.yml
-- include: desktop.yml
-
-

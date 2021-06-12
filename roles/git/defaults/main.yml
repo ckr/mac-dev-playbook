@@ -1,0 +1,16 @@
+---
+git_user:
+  name: ""
+  email: ""
+  signingkey: ""
+  username: ""
+git_github:
+  user: ""
+git_homebrew_packages:
+  - git
+  - git-flow-avh
+  - git-standup
+  - git-quick-stats
+  - pinentry-mac
+git_links:
+  - { src: '{{ ansible_user_dir }}/bin/gn', dest: '{{ ansible_user_dir }}/bin/gn.py' }

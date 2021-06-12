@@ -1,77 +1,73 @@
-DOTFILES
-========
+# Mac Build for Development using Ansible Playbook
 
-This repository contains most of my "movable" setup.  Mostly these are configurations
-for zsh shell, git version control, and Vim text editor.
+[![CI][badge-gh-actions]][link-gh-actions]
 
-Dependencies
-------------
+This playbook installs and configures most of the software I use on my Mac for software development and security. Some things in macOS are slightly difficult to automate, so I still have a few manual installation steps, but at least it's all documented here.
 
-* Homebrew (https://brew.sh/)
-* Ansible (https://www.ansible.com/)
+## Installation
 
-You can install ansible via Homebrew
+  1. Ensure Apple's command line tools are installed (`xcode-select --install` to launch the intaller).
+  2. If you are using an M-series Mac you might need to install Rosetta (`sudo softwareupdate --install-rosetta`).
+  3. [Install Homebrew][link-brew]
+    1. Run the following command to install brew `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+  4. [Install Ansible][link-ansible]:
+    1. Run the following brew command to install ansible `brew install ansible`
+  5. Clone or download this repository to your local drive.
+  6. Run `ansible-playbook main.yml --ask-become-pass` inside this directory. Enter your macOS account password when prompted for the 'BECOME' password.
 
+**DANGER** This will overwrite your current mac configuraiton!
+
+### Running a specific set
+
+You can filter which part of the provisioning process to run by specifying a set of tags using `ansible-playbook`'s `--tags` flag.
+
+To list the availble tags use the following command:
 ```
-$ brew install ansible
-```
-
-Installation
-------------
-
-Clone the repository:
-
-```
-$ git clone https://github.com/ckr/dotfiles.git
-$ cd dotfiles
-```
-
-**DANGER** This will overwrite your current dot files!
-
-Run Ansible
-
-```
-$ ansible-playbook home.yml
-```
-
-You can skip package installations and/or network operations (Vim plugins cloning, etc)
-with something like:
-
-```
-$ ansible-playbook home.yml --skip-tags="network,packages"
+ansible-playbook main.yml --list-tags
 ```
 
 You can also run only specified tags with something like:
+```
+ansible-playbook main.yml --ask-become-pass --tags "tweaks,homebrew"
+```
+
+You can skip tags with something like:
 
 ```
-$ ansible-playbook home.yml --tags="vimrc,vim-plugins"
+ansible-playbook home.yml --ask-become-pass --skip-tags="terminal,files"
 ```
 
-If you want to install/configure only certain parts, replace `home.yml` in the commands
-above with of the other playbooks.
+## Overriding Defaults
 
-Features
---------
+Not everyones setup is the same. For this reason the default configuration for this project is empty and all the rasks and roles disabled.
 
-Here is a brief overview of some of the features hidden deep in these dotfiles.
+You can override any of the defaults configured in ` default.config.yml` by creating a `config.yml` file and setting the overrides in that file.
 
-### Git version control
+For examples you can have a look at `home.config.yml` and `work.config.yml`
 
-1.  Color support in console git client.
-2.  Several handy git aliases to make frequent operations faster ("st" instead of "status", "co" instead of "checkout",
-    etc).
-3.  Several handy git aliases to make long lists of parameters much shorter ("la", "whatchanged", etc).
+If you do want have different setups for home and work like I do have a look at my `home.config.yml` and `work.config.yml`. You can use them or create your own and pass it's name as an argument to the `--extra-vars` parameter.
 
-### Vim text editor
+If you do create a `config.yml` file it will always load last and take presidence over any other file.
 
-1.  Modular configuration of plugins with Pathogen plugin and git submodules.
-2.  Collection of plugins for web developers (PHP Indent, NERDTree, Syntastic, Tagbar, Gist, etc).
-3.  Support for 256 colors in console.
+Using the `home.config.yml`:
+```
+ansible-playbook main.yml --ask-become-pass --extra-vars "use_config=home"
+```
 
+Using the `work.config.yml`:
+```
+ansible-playbook main.yml --ask-become-pass --extra-vars "use_config=work"
+```
 
-Feedback
---------
+## Feedback
 
-If you need to get in touch, you can find instruction at https://kouloumbris.com.  Alternatively, you can send in comments and pull requests for the project on GitHub at https://github.com/ckr/dotfiles .
+If you need to get in touch, you can find how at [my website][link-author] or my [gihub profile][link-gh-home]. Alternatively, you can send in comments and pull requests for the project here.
 
-Patches welcome! ;)
+Issues and Pull requests welcome! ;)
+
+[link-brew]: https://brew.sh
+[link-ansible]: https://www.ansible.com/
+[link-gh-home]: https://github.com/ckr
+[link-author]: https://kouloumbris.com
+[badge-gh-actions]: https://github.com/ckr/dotfiles-playbook/workflows/CI/badge.svg?event=push
+[link-gh-actions]: https://github.com/ckr/dotfiles-playbook/actions?query=workflow%3ACI

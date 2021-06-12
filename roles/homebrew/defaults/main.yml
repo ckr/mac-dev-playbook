@@ -1,0 +1,25 @@
+---
+# Make sure the following taps are configured
+homebrew_taps:
+  - homebrew/core
+  - homebrew/cask
+# Make sure the following packages are installed/uninstalled
+# Installed List
+homebrew_packages_installed: []
+# - asciinema
+# - awscli
+# - cowsay
+# Uninstalled List
+homebrew_packages_uninstalled: []
+  # - readline
+# Make sure the following casks (apps) are installed/uninstalled
+# Set the application directory
+homebrew_casks_appdir: /Applications
+# Allow external applications
+homebrew_casks_accept_external: false
+homebrew_casks_installed: []
+# - google-chrome
+homebrew_casks_uninstalled: []
+# - firefox
+# Update all
+homebrew_upgrade_all: false
