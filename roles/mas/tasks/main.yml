@@ -50,12 +50,12 @@
   community.general.mas:
     name: "{{ item.id | default(item) }}"
     state: absent
-  become: yes
+  become: true
   loop: "{{ mas_uninstalled }}"
   tags:
     - mas
 
 - name: Upgrade all installed Mac App Store apps
   community.general.mas:
-    upgrade_all: yes
+    upgrade_all: true
   when: mas_upgrade_all

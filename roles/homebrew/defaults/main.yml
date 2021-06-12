@@ -11,7 +11,7 @@ homebrew_packages_installed: []
 # - cowsay
 # Uninstalled List
 homebrew_packages_uninstalled: []
-  # - readline
+# - readline
 # Make sure the following casks (apps) are installed/uninstalled
 # Set the application directory
 homebrew_casks_appdir: /Applications
