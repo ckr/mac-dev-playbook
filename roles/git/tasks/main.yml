@@ -58,31 +58,21 @@
     - git
     - pinentry
 
-- name: Check if ~/.gnupg/gpg-agent.conf exists
-  stat:
-    path: "{{ ansible_user_dir }}/.gnupg/gpg-agent.conf"
-  register: stat_gpg_agent
+- name: Print stat_pinentry var
+  debug:
+    var: stat_pinentry.stat.exists
+    verbosity: 3
   tags:
-    - git
     - pinentry
-    - gpg
-
-- name: Check if gpg-agent already configured with pinentry
-  shell: grep -c "^pinentry-program" /usr/local/bin/pinentry-mac || true
-  register: stat_gpg_agent_pinentry
-  changed_when: false
-  tags:
-    - git
-    - pinentry
-    - gpg
 
 - name: Configure gpg-agent to use pinentry-mac
   lineinfile:
-    dest: "{{ ansible_user_dir }}/.gnupg/gpg-agent.conf"
+    create: true
+    path: "{{ ansible_user_dir }}/.gnupg/gpg-agent.conf"
     line: pinentry-program /usr/local/bin/pinentry-mac
-  when:
-    - stat_gpg_agent
-    - stat_gpg_agent_pinentry.stdout == "0"
+    search_string: 'pinentry-program'
+    state: present
+  when: stat_pinentry.stat.exists
   tags:
     - git
     - pinentry
