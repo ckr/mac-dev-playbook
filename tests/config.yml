@@ -1,5 +1,12 @@
 ---
 homebrew_enable: true
+homebrew_packages_installed:
+  - autoconf
+  - ssh-copy-id
+  - pv
+  - wget
+homebrew_casks_installed:
+  - firefox
 mactweaks_enable: true
 composer_enable: false
 mas_enable: false
@@ -14,16 +21,3 @@ git_github:
   username: ckr
 dotfiles_enable: true
 github_ssh_keys_username: ckr
-
-homebrew_installed_packages:
-  - autoconf
-  - gettext
-  - sqlite
-  - ssh-copy-id
-  - cowsay
-  - readline
-  - pv
-  - wget
-homebrew_cask_apps:
-  - firefox
-  - licecap
