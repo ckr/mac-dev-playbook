@@ -9,9 +9,9 @@ This playbook installs and configures most of the software I use on my Mac for s
   1. Ensure Apple's command line tools are installed (`xcode-select --install` to launch the intaller).
   2. If you are using an M-series Mac you might need to install Rosetta (`sudo softwareupdate --install-rosetta`).
   3. [Install Homebrew][link-brew]
-    1. Run the following command to install brew `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+      1. Run the following command to install brew `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
   4. [Install Ansible][link-ansible]:
-    1. Run the following brew command to install ansible `brew install ansible`
+      1. Run the following brew command to install ansible `brew install ansible`
   5. Clone or download this repository to your local drive.
   6. Run `ansible-playbook main.yml --ask-become-pass` inside this directory. Enter your macOS account password when prompted for the 'BECOME' password.
 
