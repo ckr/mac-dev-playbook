@@ -36,6 +36,7 @@
 
 - name: Restart dock
   command: killall Dock
+  changed_when: false
   tags:
     - tweaks
     - dock

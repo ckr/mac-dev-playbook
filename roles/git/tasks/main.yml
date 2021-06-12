@@ -46,7 +46,7 @@
 - name: Create .gitconfig file
   template:
     src: gitconfig.j2
-    dest: "{{ ansible_user_dir}}/.gitconfig"
+    dest: "{{ ansible_user_dir }}/.gitconfig"
   tags:
     - files
 
@@ -70,6 +70,7 @@
 - name: Check if gpg-agent already configured with pinentry
   shell: grep -c "^pinentry-program" /usr/local/bin/pinentry-mac || true
   register: stat_gpg_agent_pinentry
+  changed_when: false
   tags:
     - git
     - pinentry
@@ -79,7 +80,9 @@
   lineinfile:
     dest: "{{ ansible_user_dir }}/.gnupg/gpg-agent.conf"
     line: pinentry-program /usr/local/bin/pinentry-mac
-  when: stat_gpg_agent.stat.exists == True and stat_gpg_agent.stat.exists == True and stat_gpg_agent_pinentry.stdout == "0"
+  when:
+    - stat_gpg_agent
+    - stat_gpg_agent_pinentry.stdout == "0"
   tags:
     - git
     - pinentry

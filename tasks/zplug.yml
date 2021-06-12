@@ -22,7 +22,7 @@
   copy:
     src: ~/.zshrc
     dest: ~/.zshrc.orig
-  when: stat_zshrc.stat.exists == True
+  when: stat_zshrc
   tags:
     - zsh
     - zsh_cofig
@@ -37,16 +37,10 @@
 
 - name: Configure fzf
   shell: $(brew --prefix)/opt/fzf/install --no-bash --no-fish --completion --no-update-rc --key-bindings
-  when: stat_fzf.stat.exists == True
+  when: stat_fzf
   tags:
     - zsh
     - fzf
-
-- name: Chanching default shell to zsh
-  shell: chsh -s $(grep /zsh$ /etc/shells | tail -1)
-  when: ansible_facts.user_shell != '/bin/zsh'
-  tags:
-    - terminal
 
 - name: Copy dotfiles
   copy:

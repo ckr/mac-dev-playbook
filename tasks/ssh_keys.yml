@@ -2,11 +2,6 @@
 # ~/.ssh/authorized_keys with the public
 # keys of the user's GitHub profile
 ---
-- name: Get the username running the deploy
-  become: false
-  local_action: command whoami
-  register: username_on_the_host
-
 - name: Fetching GitHub keys
   authorized_key:
     user: "{{ lookup('env', 'USER') | default(omit) }}"
