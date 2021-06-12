@@ -1,5 +1,4 @@
 ---
----
 homebrew_enable: true
 mactweaks_enable: true
 composer_enable: true
