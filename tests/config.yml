@@ -1,7 +1,7 @@
 ---
 homebrew_enable: true
 mactweaks_enable: true
-composer_enable: true
+composer_enable: false
 mas_enable: false
 zplug_enable: true
 git_enable: true
