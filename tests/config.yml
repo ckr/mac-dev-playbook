@@ -1,4 +1,21 @@
 ---
+---
+homebrew_enable: true
+mactweaks_enable: true
+composer_enable: true
+mas_enable: false
+zplug_enable: true
+git_enable: true
+git_user:
+  name: Constantinos Kouloumbris
+  email: c@kouloumbris.com
+  signingkey: A71BC59B4628E857
+  username: ckr
+git_github:
+  username: ckr
+dotfiles_enable: true
+github_ssh_keys_username: ckr
+
 homebrew_installed_packages:
   - autoconf
   - gettext
@@ -8,7 +25,6 @@ homebrew_installed_packages:
   - readline
   - pv
   - wget
-
 homebrew_cask_apps:
   - firefox
   - licecap
