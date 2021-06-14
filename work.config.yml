@@ -1,5 +1,4 @@
 ---
----
 # Enable/Disable varius tasks
 configure_ssh_keys: true
 github_ssh_keys_username: ckr
@@ -8,91 +7,38 @@ configure_zplug: true
 # Homebrew configuration
 homebrew_enable: true
 homebrew_packages_installed:
-  # from git
-  - coreutils
-  - csshx
-  - fabric
-  - gd
-  - goaccess
-  - htop-osx
-  - percona-toolkit
-  - pssh
-  - pwgen
-  - python
-  - python3
-  - pyenv
-  - rbenv
-  - rbenv-default-gems
-  - ruby
-  - socat
-  - tor
-  - tree
-  - watch
-  - gpg
-  - kubernetes-cli
+  - ack
   - asciinema
-  - mas
-  - nikto
-  - sqlmap
-  - hydra
-  - wpscan
-  ## actual
-  - libyaml
-  - readline
-  - ansible
-  - ant
-  - asciinema
-  - augeas
-  - automake
-  - avr-gcc@7
-  - avrdude
   - awscli
-  - bash-completion
   - blueutil
-  - certbot
-  - composer
   - coreutils
   - couchdb
   - cowsay
   - csshx
-  - glib
-  - php
-  - python@3.8
-  - deployer
   - dfu-programmer
   - dfu-util
-  - dockutil
+  - fabric
   - figlet
-  - fortune
-  - fzf
-  - gibo
-  - git
-  - git-flow
-  - git-quick-stats
-  - glances
-  - unbound
-  - gnutls
-  - libksba
+  - gd
   - gnupg
-  - tokyo-cabinet
   - goaccess
+  - gpg
   - gpgme
-  - grc
-  - grv
   - hashcat
   - htop
-  - hugo
-  - shared-mime-info
-  - libheif
+  - htop-osx
+  - hydra
   - imagemagick
   - iperf3
+  - kubernetes-cli
   - libiconv
-  - libxml2
+  - libyaml
+  - links
   - lolcat
   - mas
   - mysql
   - mysql-client
-  - neofetch
+  - nikto
   - nmap
   - node
   - p7zip
@@ -100,57 +46,59 @@ homebrew_packages_installed:
   - php@7.2
   - php@7.3
   - php@7.4
-  - pinentry-mac
   - postgresql
+  - pssh
   - pv
   - pwgen
-  - python@2
+  - pyenv
+  - python
+  - python2
+  - python3
   - rbenv
   - rbenv-default-gems
-  - reattach-to-user- namespace
   - redis
+  - rlwrap
   - ruby
   - screenfetch
   - selecta
   - socat
   - sphinx-doc
-  - telnet
+  - sqlmap
+  - sslscan
   - terraform
   - tmux
+  - tor
   - tree
   - vault
-  - wakeonlan
   - watch
   - wget
   - zlib
-  - zplug
-  - zsh
-  - cloudflare/cloudflare/cloudflared
-  - hashicorp/tap/waypoint
-  - osx-cross/avr/avr-gcc@8
-  - pritunl/tap/pritunl-ssh
-  - px4/px4/gcc-arm-none-eabi
 homebrew_casks_installed:
-  - google-chrome
-  - amethyst
-  - burp-suite
-  - cakebrew
-  - gpg-suite
-  - zerotier-one
   - 1password
   - alfred
-  - visual-studio-code
+  - amethyst
   - bartender
+  - burp-suite
+  - cakebrew
   - docker
   - dropbox
+  - duo-connect
   - flexiglass
+  - google-chrome
+  - gpg-suite
+  - istat-menus
   - iterm2
+  - lens
+  - neo4j
+  - postman
+  - rectangle
   - sequel-pro
+  - shift
   - slack
   - spotify
-  - istat-menus
-  - rectangle
   - sublime-text
+  - visual-studio-code
+  - zerotier-one
 
 # Composer configuration
 composer_enable: true
@@ -173,10 +121,10 @@ mactweaks_enable: true
 mactweaks_system_enable: true
 mactweaks_system_defaults:
   - { domain: com.apple.dock, key: autohide-time-modifier, type: int, value: 0 }
-  - { domain: com.apple.dock, key: autohide, type: int, value: 1 }
+  - { domain: com.apple.dock, key: autohide, type: int, value: 0 }
   - { domain: com.apple.dock, key: orientation, type: string, value: left }
   - { domain: com.apple.dock, key: show-recents, type: int, value: 0 }
-  - { domain: com.apple.dock, key: tilesize, type: float, value: 50 }
+  - { domain: com.apple.dock, key: tilesize, type: int, value: 50 }
   - { domain: com.apple.dock, key: largesize, type: float, value: 58 }
   - { domain: com.apple.screensaver, key: askForPassword, type: int, value: 1 }
   - { domain: com.apple.screensaver, key: tokenRemovalAction, type: int, value: 0 }

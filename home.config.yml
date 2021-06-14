@@ -6,65 +6,63 @@ configure_zplug: true
 
 # Homebrew configuration
 # Enable/Disable this role
-homebrew_enable: false
+homebrew_enable: true
 homebrew_packages_installed:
-  # final
   - ack
-  - links
-  - tmux
-  - rlwrap
-  - sslscan
-  - lolcat
-  - figlet
-  - cowsay
-  # from git
+  - asciinema
   - coreutils
+  - cowsay
   - csshx
   - fabric
+  - figlet
   - gd
   - goaccess
+  - gpg
   - htop-osx
+  - hydra
+  - kubernetes-cli
+  - links
+  - lolcat
+  - mas
+  - nikto
   - percona-toolkit
   - pssh
   - pwgen
+  - pyenv
   - python
   - python3
-  - pyenv
   - rbenv
   - rbenv-default-gems
+  - rlwrap
   - ruby
   - socat
+  - sqlmap
+  - sslscan
+  - tmux
   - tor
   - tree
   - watch
-  - gpg
-  - kubernetes-cli
-  - asciinema
-  - mas
-  - nikto
-  - sqlmap
-  - hydra
 homebrew_casks_installed:
-  - google-chrome
-  - amethyst
-  - burp-suite
-  - cakebrew
-  - gpg-suite
-  - zerotier-one
   - 1password
   - alfred
-  - visual-studio-code
+  - amethyst
   - bartender
+  - burp-suite
+  - cakebrew
   - docker
   - dropbox
   - flexiglass
+  - google-chrome
+  - gpg-suite
+  - istat-menus
   - iterm2
+  - rectangle
   - sequel-pro
   - slack
   - spotify
-  - istat-menus
-  - rectangle
   - sublime-text
+  - visual-studio-code
+  - zerotier-one
 
 # Composer configuration
 composer_enable: true
