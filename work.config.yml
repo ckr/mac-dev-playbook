@@ -233,6 +233,8 @@ mas_installed:
   - { id: 425424353, name: "The Unarchiver" }
   - { id: 595191960, name: "CopyClip" }
   - { id: 568494494, name: "Pocket" }
+  - { id: 1510445899, name: "Meeter" }
+  - { id: 1354318707, name: "Core Tunnel" }
 
 # Git configuration
 git_enable: true
