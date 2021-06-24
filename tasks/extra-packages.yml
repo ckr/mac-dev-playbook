@@ -7,6 +7,8 @@
     global: true
     executable: "{{ item.executable | default(omit) }}"
   loop: "{{ yarn_packages }}"
+  # TODO: Fix remove when yarn doesn't resinstall an installed package
+  changed_when: false
   tags:
     - yarn_packages
 
