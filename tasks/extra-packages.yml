@@ -1,0 +1,43 @@
+---
+- name: Install global Node Packages with Yarn.
+  community.general.yarn:
+    name: "{{ item.name | default(item) }}"
+    state: "{{ item.state | default('present') }}"
+    version: "{{ item.version | default(omit) }}"
+    global: true
+    executable: "{{ item.executable | default(omit) }}"
+  loop: "{{ yarn_packages }}"
+  tags:
+    - yarn_packages
+
+- name: Install global Node packages with Npm.
+  community.general.npm:
+    name: "{{ item.name | default(item) }}"
+    state: "{{ item.state | default('present') }}"
+    version: "{{ item.version | default(omit) }}"
+    global: true
+    executable: "{{ item.executable | default(omit) }}"
+  loop: "{{ npm_packages }}"
+  tags:
+    - npm_packages
+
+- name: Install global Pip packages.
+  pip:
+    name: "{{ item.name | default(item) }}"
+    state: "{{ item.state | default('present') }}"
+    version: "{{ item.version | default(omit) }}"
+    executable: "{{ item.executable | default(omit) }}"
+  loop: "{{ pip_packages }}"
+  tags:
+    - pip_packages
+
+- name: Install global Ruby gems.
+  community.general.gem:
+    name: "{{ item.name | default(item) }}"
+    state: "{{ item.state | default('present') }}"
+    version: "{{ item.version | default(omit) }}"
+    user_install: false
+    executable: "{{ item.executable | default(omit) }}"
+  loop: "{{ gem_packages }}"
+  tags:
+    - gem_packages

@@ -3,6 +3,7 @@
 configure_ssh_keys: true
 github_ssh_keys_username: ckr
 configure_zplug: true
+configure_extra_packages: true
 
 # Homebrew configuration
 # Enable/Disable this role
@@ -42,6 +43,8 @@ homebrew_packages_installed:
   - tor
   - tree
   - watch
+  - yarn
+  - npm
 homebrew_casks_installed:
   - 1password
   - alfred
@@ -218,3 +221,15 @@ git_enable: true
 
 # Dotfiles configuration
 dotfiles_enable: true
+
+# Node packages via yarn
+yarn_packages: []
+
+# Node packages via npm
+npm_packages: []
+
+# Python packages via pip
+pip_packages: []
+
+# Ruby gems
+gem_packages: []

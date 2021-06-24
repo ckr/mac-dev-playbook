@@ -21,3 +21,12 @@ git_github:
   username: ckr
 dotfiles_enable: true
 github_ssh_keys_username: ckr
+configure_extra_packages: true
+yarn_packages:
+  - aws-cdk
+npm_packages:
+  - bower
+pip_packages:
+  - mkdocs
+gem_packages:
+  - bundler

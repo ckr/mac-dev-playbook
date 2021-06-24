@@ -11,6 +11,7 @@ configure_ssh_keys: false
 # the username of the user running the deploy
 # github_ssh_keys_username: ckr
 configure_zplug: false
+configure_extra_packages: false
 
 # Homebrew configuration
 # Enable/Disable this role
@@ -60,3 +61,28 @@ git_enable: false
 
 # Dotfiles configuration
 dotfiles_enable: false
+
+# Install packages from other package managers.
+# Note: You are responsible for making sure the required package managers are
+# installed, eg. through homebrew.
+
+yarn_packages: []
+# - name: aws-cdk
+#   state: present # present/absent/latest, default: present
+#   version: "^1.106.1" # default: N/A
+
+npm_packages: []
+# - name: bower
+#   state: present # present/absent/latest, default: present
+#   version: "^1.8.8" # default: N/A
+
+
+pip_packages: []
+# - name: mkdocs
+#   state: present # present/absent/latest, default: present
+#   version: "0.16.3" # default: N/A
+
+gem_packages: []
+# - name: bundler
+#   state: present # present/absent/latest, default: present
+#   version: "~> 1.15.1" # default: N/A

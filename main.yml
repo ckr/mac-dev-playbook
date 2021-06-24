@@ -54,3 +54,10 @@
       when: configure_zplug
       tags:
         - zplug
+    - import_tasks: tasks/extra-packages.yml
+      when: configure_extra_packages
+      tags:
+        - yarn
+        - npm
+        - pip
+        - gem
