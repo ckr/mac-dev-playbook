@@ -28,6 +28,9 @@
     update_homebrew: true
     upgrade_all: true
   when: homebrew_upgrade_all
+  tags:
+    - homebrew_packages
+
 
 - name: Install configured cask applications.
   community.general.homebrew_cask:
@@ -36,9 +39,13 @@
     install_options: "{{ item.install_options | default('appdir=' + homebrew_casks_appdir) }}"
     accept_external_apps: "{{ homebrew_casks_accept_external }}"
   loop: "{{ homebrew_casks_installed }}"
+  tags:
+    - homebrew_packages
 
 - name: Uninstall configured cask applications.
   community.general.homebrew_cask:
     name: "{{ item.name | default(item) }}"
     state: absent
   loop: "{{ homebrew_casks_uninstalled }}"
+  tags:
+    - homebrew_packages

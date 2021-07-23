@@ -21,6 +21,8 @@
   ansible.builtin.include_tasks: dock-remove.yml
   when: mactweaks_dock_enable
   loop: "{{ mactweaks_dock_items_remove }}"
+  tags:
+    - dock
 
 - name: Ensure required dock items exist.
   ansible.builtin.include_tasks: dock-add.yml
@@ -34,6 +36,8 @@
     - item.pos is defined
     - item.pos > 0
   loop: "{{ mactweaks_dock_items_persist }}"
+  tags:
+    - dock
 
 - name: Restart dock
   command: killall Dock
