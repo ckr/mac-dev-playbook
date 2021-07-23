@@ -22,7 +22,7 @@
   copy:
     src: ~/.zshrc
     dest: ~/.zshrc.orig
-  when: stat_zshrc
+  when: stat_zshrc.stat.exists
   tags:
     - zsh
     - zsh_cofig
@@ -37,7 +37,7 @@
 
 - name: Configure fzf
   shell: $(brew --prefix)/opt/fzf/install --no-bash --no-fish --completion --no-update-rc --key-bindings
-  when: stat_fzf
+  when: stat_fzf.stat.exists
   tags:
     - zsh
     - fzf
@@ -49,6 +49,6 @@
   with_fileglob:
     - "files/zplug/*"
   tags:
-    - files
+    - zsh_files
     - dotaliases
     - spaceship
