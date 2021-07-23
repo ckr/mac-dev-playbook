@@ -12,6 +12,7 @@
   community.general.homebrew:
     name: "{{ composer_defaults_php_version }}"
     state: linked
+    install_options: "{{ composer_defaults_php_version_install_options | default(omit) }}"
   tags:
     - default_php
 
