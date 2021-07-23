@@ -41,7 +41,7 @@ ansible-playbook main.yml --ask-become-pass --tags "tweaks,homebrew"
 You can skip tags with something like:
 
 ```bash
-ansible-playbook home.yml --ask-become-pass --skip-tags="terminal,files"
+ansible-playbook main.yml --ask-become-pass --skip-tags="terminal,files"
 ```
 
 ## Overriding Defaults
