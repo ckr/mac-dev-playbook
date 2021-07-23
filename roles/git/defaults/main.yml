@@ -1,11 +1,12 @@
 ---
-git_user:
-  name: ""
-  email: ""
-  signingkey: ""
-  username: ""
-git_github:
-  user: ""
+git:
+  user:
+    name: ""
+    email: ""
+    signingkey: ""
+    username: ""
+  github:
+    user: ""
 git_homebrew_packages:
   - git
   - git-flow-avh

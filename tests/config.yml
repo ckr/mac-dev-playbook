@@ -12,13 +12,14 @@ composer_enable: false
 mas_enable: false
 zplug_enable: true
 git_enable: true
-git_user:
-  name: Constantinos Kouloumbris
-  email: c@kouloumbris.com
-  signingkey: A71BC59B4628E857
-  username: ckr
-git_github:
-  username: ckr
+git:
+  user:
+    name: Constantinos Kouloumbris
+    email: c@kouloumbris.com
+    signingkey: A71BC59B4628E857
+    username: ckr
+  github:
+    username: ckr
 dotfiles_enable: true
 github_ssh_keys_username: ckr
 configure_extra_packages: true

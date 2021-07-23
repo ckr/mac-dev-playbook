@@ -240,12 +240,14 @@ mas_installed:
 
 # Git configuration
 git_enable: true
-git_user_name: Constantinos Kouloumbris
-git_user_email: constantinoskouloumbris@rentalcars.com
-git_user_signingkey: 1
-git_user_username: kouloumbrisc
-git_github_username: ckr
-
+git:
+  user:
+    name: Constantinos Kouloumbris
+    email: constantinoskouloumbris@rentalcars.com
+    signingkey: 3A749A0D2583527B
+    username: kouloumbrisc
+  github:
+    username: ckr
 
 # Dotfiles configuration
 dotfiles_enable: true
