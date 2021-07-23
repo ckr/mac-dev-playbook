@@ -13,7 +13,6 @@ homebrew_packages_installed:
   - awscli
   - blueutil
   - coreutils
-  - couchdb
   - cowsay
   - csshx
   - dfu-programmer
@@ -44,16 +43,17 @@ homebrew_packages_installed:
   - node
   - p7zip
   - percona-toolkit
-  - php@7.2
-  - php@7.3
-  - php@7.4
+  - libpsl
+  - name: php@7.2
+    install_options: 'build-from-source'
+  - name: php@7.4
+    install_options: 'build-from-source'
   - postgresql
   - pssh
   - pv
   - pwgen
   - pyenv
   - python
-  - python2
   - python3
   - rbenv
   - rbenv-default-gems
@@ -84,9 +84,7 @@ homebrew_casks_installed:
   - burp-suite
   - cakebrew
   - docker
-  - dropbox
   - duo-connect
-  - flexiglass
   - google-chrome
   - gpg-suite
   - istat-menus
@@ -101,7 +99,8 @@ homebrew_casks_installed:
   - spotify
   - sublime-text
   - visual-studio-code
-  - zerotier-one
+  - bluejeans
+  - workplace-chat
 
 # Composer configuration
 composer_enable: true
@@ -124,7 +123,7 @@ mactweaks_enable: true
 mactweaks_system_enable: true
 mactweaks_system_defaults:
   - { domain: com.apple.dock, key: autohide-time-modifier, type: int, value: 0 }
-  - { domain: com.apple.dock, key: autohide, type: int, value: 0 }
+  - { domain: com.apple.dock, key: autohide, type: int, value: 1 }
   - { domain: com.apple.dock, key: orientation, type: string, value: left }
   - { domain: com.apple.dock, key: show-recents, type: int, value: 0 }
   - { domain: com.apple.dock, key: tilesize, type: int, value: 50 }
@@ -198,49 +197,55 @@ mactweaks_dock_items_persist:
     section: "apps"
     pos: 11
   - name: "OneDrive - Rentalcars.com"
-    path: "/Users/ckr/OneDrive - Rentalcars.com/"
+    path: "/Users/kouloumbrisc/OneDrive - Rentalcars.com/"
     section: "others"
     pos: 1
-  - name: "Dropbox"
-    path: "/Users/ckr/Dropbox/"
+  - name: "Downloads"
+    path: "/Users/kouloumbrisc/Downloads/"
     section: "others"
     pos: 2
-  - name: "Downloads"
-    path: "/Users/ckr/Downloads/"
-    section: "others"
-    pos: 3
-  - name: "Code of Conduct.webloc"
-    path: "/Users/ckr/Library/Application Support/ConfigurationProfiles/Code of Conduct.webloc"
-    section: "others"
-    pos: 4
-  - name: "BGO Compliance.webloc"
-    path: "/Users/ckr/Library/Application Support/ConfigurationProfiles/BGO Compliance.webloc"
-    section: "others"
-    pos: 5
 
 # MAS configuration
 mas_enable: true
 mas_signin_dialog: true
 # Update all
-mas_upgrade_all: true
+mas_upgrade_all: false
 # Make sure the following apps are installed/uninstalled
 # Installed List
 mas_installed:
-  - { id: 866773894, name: "Quiver" }
-  - { id: 1491071483, name: "Tot" }
-  - { id: 904280696, name: "Things" }
-  - { id: 1516894961, name: "Codye" }
-  - { id: 587769990, name: "EyeFriendly" }
-  - { id: 638161122, name: "YubiKey Personalization Tool" }
-  - { id: 426410278, name: "Flexiglass" }
-  - { id: 425424353, name: "The Unarchiver" }
-  - { id: 595191960, name: "CopyClip" }
-  - { id: 568494494, name: "Pocket" }
-  - { id: 1510445899, name: "Meeter" }
-  - { id: 1354318707, name: "Core Tunnel" }
+  - id: 866773894
+    name: "Quiver"
+  - id: 1491071483
+    name: "Tot"
+  - id: 904280696
+    name: "Things"
+  - id: 1516894961
+    name: "Codye"
+  - id: 587769990
+    name: "EyeFriendly"
+  - id: 638161122
+    name: "YubiKey Personalization Tool"
+  - id: 426410278
+    name: "Flexiglass"
+  - id: 425424353
+    name: "The Unarchiver"
+  - id: 595191960
+    name: "CopyClip"
+  - id: 568494494
+    name: "Pocket"
+  - id: 1510445899
+    name: "Meeter"
+  - id: 1354318707
+    name: "Core Tunnel"
 
 # Git configuration
 git_enable: true
+git_user_name: Constantinos Kouloumbris
+git_user_email: constantinoskouloumbris@rentalcars.com
+git_user_signingkey: 1
+git_user_username: kouloumbrisc
+git_github_username: ckr
+
 
 # Dotfiles configuration
 dotfiles_enable: true
