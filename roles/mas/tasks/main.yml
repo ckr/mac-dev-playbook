@@ -43,6 +43,7 @@
     id: "{{ item.id | default(item) }}"
     state: "{{ item.state | default('present') }}"
   loop: "{{ mas_installed }}"
+  when: mas_installed is defined
   tags:
     - mas
 
@@ -52,6 +53,7 @@
     state: absent
   become: true
   loop: "{{ mas_uninstalled }}"
+  when: mas_uninstalled is defined
   tags:
     - mas
 
