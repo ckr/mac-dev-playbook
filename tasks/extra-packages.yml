@@ -8,8 +8,9 @@
     executable: "{{ item.executable | default(omit) }}"
   loop: "{{ yarn_packages }}"
   # TODO: Fix remove when yarn doesn't resinstall an installed package
-  changed_when: false
+  # changed_when: false
   tags:
+    - yarn
     - yarn_packages
 
 - name: Install global Node packages with Npm.
@@ -21,6 +22,7 @@
     executable: "{{ item.executable | default(omit) }}"
   loop: "{{ npm_packages }}"
   tags:
+    - npm
     - npm_packages
 
 - name: Install global Pip packages.
@@ -31,6 +33,7 @@
     executable: "{{ item.executable | default(omit) }}"
   loop: "{{ pip_packages }}"
   tags:
+    - pip
     - pip_packages
 
 - name: Install global Ruby gems.
@@ -42,4 +45,5 @@
     executable: "{{ item.executable | default(omit) }}"
   loop: "{{ gem_packages }}"
   tags:
+    - gem
     - gem_packages
