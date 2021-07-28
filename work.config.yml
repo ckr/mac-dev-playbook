@@ -76,6 +76,9 @@ homebrew_packages_installed:
   - zlib
   - yarn
   - npm
+  - bat
+  - ripgrep
+  - neovim
 homebrew_casks_installed:
   - 1password
   - alfred
@@ -101,6 +104,10 @@ homebrew_casks_installed:
   - visual-studio-code
   - bluejeans
   - workplace-chat
+  - jetbrains-toolbox
+  - phpstorm
+  - datagrip
+  - notion
 
 # Composer configuration
 composer_enable: true
@@ -196,8 +203,8 @@ mactweaks_dock_items_persist:
     path: "/Applications/Workplace Chat.app/"
     section: "apps"
     pos: 11
-  - name: "OneDrive - Rentalcars.com"
-    path: "/Users/kouloumbrisc/OneDrive - Rentalcars.com/"
+  - name: "OneDrive - Booking.com Transport"
+    path: "/Users/kouloumbrisc/OneDrive - Booking.com Transport/"
     section: "others"
     pos: 1
   - name: "Downloads"
