@@ -53,6 +53,8 @@ zplug "rupa/z", use:z.sh
 
 zplug "zsh-users/zsh-syntax-highlighting"
 
+zplug "zsh-users/zsh-completions", depth:2
+
 zplug "zsh-users/zsh-history-substring-search"
 # rebind keys to use zsh-history-substring-search
 if zplug check "zsh-users/zsh-history-substring-search"; then
