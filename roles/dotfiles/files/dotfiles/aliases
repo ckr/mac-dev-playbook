@@ -5,8 +5,8 @@ alias ls='ls -G'
 alias ll='ls -lG'
 
 #common stuff
-alias vi="vim -X"
-alias vim="vim -X"
+alias vi="nvim"
+alias vim="nvim"
 alias ll="ls -al"
 alias du="du -kh"
 alias ..="cd ..;"
@@ -16,6 +16,7 @@ alias traceroute="traceroute -I"
 alias who="who -HT"
 alias mkdir="mkdir -p"
 alias path="echo -e ${PATH//:/\\n}"
+alias cat='bat'
 
 # cluster ssh alias
 alias cssh="tmux-cssh"
