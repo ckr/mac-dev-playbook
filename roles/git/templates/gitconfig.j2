@@ -11,8 +11,10 @@
     whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
     autocrlf = input
     excludesfile = ~/.gitignore_global
-    editor = /usr/bin/vim
-[diff]
+    editor = nvim
+    pager = diff-so-fancy | less --tabs=4 -RFX
+[interactive]
+    diffFilter = diff-so-fancy --patch
 [color]
     ui = auto
 [push]
@@ -20,6 +22,14 @@
 [branch]
     autosetuprebase = always
 [merge]
+    tool = vimdiff
+[mergetool]
+    prompt = true
+[mergetool "vimdiff"]
+    cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+[difftool]
+    prompt = false
+[diff]
     tool = vimdiff
 [filter "lfs"]
     clean = git lfs clean %f
