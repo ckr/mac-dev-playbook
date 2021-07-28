@@ -13,5 +13,6 @@ git_homebrew_packages:
   - git-standup
   - git-quick-stats
   - pinentry-mac
+  - diff-so-fancy
 git_links:
   - { src: '{{ ansible_user_dir }}/bin/gn', dest: '{{ ansible_user_dir }}/bin/gn.py' }
