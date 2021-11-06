@@ -20,7 +20,7 @@ This playbook installs and configures most of the software I use on my Mac for s
   5. Clone or download this repository to your local drive.
   6. Run `ansible-playbook main.yml --ask-become-pass` inside this directory. Enter your macOS account password when prompted for the 'BECOME' password.
 
-**DANGER** This will overwrite your current mac configuraiton!
+### **DANGER** This will overwrite your current mac configuraiton!
 
 ### Running a specific set
 
