@@ -103,7 +103,7 @@ homebrew_casks_installed:
   - spotify
   - sublime-text
   - visual-studio-code
-  - bluejeans
+  - zoom
   - workplace-chat
   - jetbrains-toolbox
   - phpstorm
@@ -237,8 +237,6 @@ mas_installed:
     name: "Flexiglass"
   - id: 425424353
     name: "The Unarchiver"
-  - id: 595191960
-    name: "CopyClip"
   - id: 568494494
     name: "Pocket"
   - id: 1510445899
