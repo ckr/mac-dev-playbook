@@ -205,7 +205,6 @@ mas_installed:
   - { id: 409907375, name: "Remote Desktop" }
   - { id: 1480068668, name: "Messenger" }
   - { id: 904280696, name: "Things" }
-  - { id: 865500966, name: "feedly" }
   - { id: 1516894961, name: "Codye" }
   - { id: 1303222628, name: "Paprika Recipe Manager 3" }
   - { id: 587769990, name: "EyeFriendly" }
@@ -213,8 +212,8 @@ mas_installed:
   - { id: 426410278, name: "Flexiglass" }
   - { id: 425424353, name: "The Unarchiver" }
   - { id: 924726344, name: "Deliveries" }
-  - { id: 595191960, name: "CopyClip" }
   - { id: 568494494, name: "Pocket" }
+  - { id: 1510445899, name: "Meeter for Zoom, Teams & Co" }
 
 # Git configuration
 git_enable: true
