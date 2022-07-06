@@ -14,41 +14,25 @@ homebrew_packages_installed:
   - blueutil
   - coreutils
   - cowsay
-  - csshx
-  - dfu-programmer
-  - dfu-util
   - fabric
   - figlet
   - gd
   - gnupg
   - goaccess
-  - gpg
   - gpgme
-  - hashcat
   - htop
-  - htop-osx
-  - hydra
   - imagemagick
-  - iperf3
   - kubernetes-cli
   - libiconv
   - libyaml
-  - links
   - lolcat
   - mas
-  - mysql
   - mysql-client
-  - nikto
   - nmap
   - node
   - p7zip
   - percona-toolkit
   - libpsl
-  - name: php@7.2
-    install_options: 'build-from-source'
-  - name: php@7.4
-    install_options: 'build-from-source'
-  - postgresql
   - pssh
   - pv
   - pwgen
@@ -57,7 +41,6 @@ homebrew_packages_installed:
   - python3
   - rbenv
   - rbenv-default-gems
-  - redis
   - rlwrap
   - ruby
   - screenfetch
@@ -68,7 +51,6 @@ homebrew_packages_installed:
   - sslscan
   - terraform
   - tmux
-  - tor
   - tree
   - vault
   - watch
@@ -80,35 +62,26 @@ homebrew_packages_installed:
   - ripgrep
   - neovim
   - git-lfs
+  - openssl@1.1
+  - openssl@3
+  - snyk
 homebrew_casks_installed:
-  - 1password
+  - 1password-cli
   - alfred
   - amethyst
+  - apparency
   - bartender
-  - burp-suite
-  - cakebrew
   - docker
   - duo-connect
-  - google-chrome
   - gpg-suite
   - istat-menus
   - iterm2
-  - lens
-  - neo4j
   - postman
   - rectangle
-  - sequel-pro
-  - shift
-  - slack
   - spotify
   - sublime-text
   - visual-studio-code
-  - zoom
-  - workplace-chat
   - jetbrains-toolbox
-  - phpstorm
-  - datagrip
-  - notion
 
 # Composer configuration
 composer_enable: true
@@ -221,6 +194,8 @@ mas_upgrade_all: false
 # Make sure the following apps are installed/uninstalled
 # Installed List
 mas_installed:
+  - id: 1516894961
+    name: "Codye"
   - id: 866773894
     name: "Quiver"
   - id: 1491071483
@@ -243,17 +218,8 @@ mas_installed:
     name: "Meeter"
   - id: 1354318707
     name: "Core Tunnel"
-
-# Git configuration
-git_enable: true
-git:
-  user:
-    name: Constantinos Kouloumbris
-    email: constantinoskouloumbris@rentalcars.com
-    signingkey: 3A749A0D2583527B
-    username: kouloumbrisc
-  github:
-    username: ckr
+  - id: 904280696
+    name: "Things"
 
 # Dotfiles configuration
 dotfiles_enable: true
