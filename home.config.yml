@@ -45,6 +45,8 @@ homebrew_packages_installed:
   - watch
   - yarn
   - npm
+  - bat
+  - nvim
 homebrew_casks_installed:
   - 1password
   - alfred
