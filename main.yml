@@ -40,10 +40,6 @@
       when: dotfiles_enable
       tags:
         - dotfiles
-    - role: git
-      when: git_enable
-      tags:
-        - git
 
   tasks:
     - import_tasks: tasks/ssh_keys.yml
