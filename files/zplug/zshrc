@@ -86,6 +86,9 @@ fi
 # Load the aliases file
 [ -f ~/.aliases ] && source ~/.aliases
 
+# Load the profile file
+[ -f ~/.profile ] && source ~/.profile
+
 # Load the private file
 [ -f ~/.private ] && source ~/.private
 
@@ -94,9 +97,6 @@ fi
 
 # Load other exports
 [ -f ~/.other_exports ] && source ~/.other_exports
-
-# Load the profile file
-[ -f ~/.profile ] && source ~/.profile
 
 # Spaceship theme settings
 [ -f ~/.spaceship.conf ] && source ~/.spaceship.conf
