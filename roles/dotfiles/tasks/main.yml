@@ -1,6 +1,6 @@
 ---
 - name: Copy dotfiles
-  copy:
+  ansible.builtin.copy:
     src: "{{ item }}"
     dest: "{{ ansible_user_dir }}/.{{ item | basename }}"
   with_fileglob:
@@ -10,28 +10,28 @@
     - dotaliases
 
 - name: Ensure bin/ folder exists
-  file:
+  ansible.builtin.file:
     path: "{{ ansible_user_dir }}/bin"
     state: directory
   tags:
     - folders
 
 - name: Ensure ~/work folder exists
-  file:
+  ansible.builtin.file:
     path: "{{ ansible_user_dir }}/work"
     state: directory
   tags:
     - folders
 
 - name: Ensure ~/code folder exists
-  file:
+  ansible.builtin.file:
     path: "{{ ansible_user_dir }}/code"
     state: directory
   tags:
     - folders
 
 - name: Copy bin/ files
-  copy:
+  ansible.builtin.copy:
     src: "{{ item }}"
     dest: "{{ ansible_user_dir }}/bin/{{ item | basename }}"
     mode: ug+rwx,o+rx
@@ -42,7 +42,7 @@
     - binfile
 
 - name: Copy dotfiles files with template
-  template:
+  ansible.builtin.template:
     src: path_exports.j2
     dest: "{{ ansible_user_dir }}/.path_exports"
   tags:

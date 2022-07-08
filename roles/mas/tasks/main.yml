@@ -9,7 +9,7 @@
     - mas
 
 - name: Check mas account status
-  command: mas account
+  ansible.builtin.command: mas account
   register: mas_account_status
   failed_when: mas_account_status.rc > 1
   check_mode: false
@@ -18,7 +18,7 @@
     - mas
 
 - name: Sign in to mas when email and password are given
-  command: 'mas signin "{{ mas.email }}" "{{ mas.password }}"'
+  ansible.builtin.command: 'mas signin "{{ mas.email }}" "{{ mas.password }}"'
   register: mas_signin_status
   when:
     - mas_account_status.rc == 1
@@ -29,7 +29,7 @@
     - mas
 
 - name: Sign in to mas when email only and prompt for password and MFA
-  command: 'mas signin "{{ mas.email }}" "{{ mas.password }}" --dialog'
+  ansible.builtin.command: 'mas signin "{{ mas.email }}" "{{ mas.password }}" --dialog'
   register: mas_signin_status
   when:
     - mas_signin_dialog

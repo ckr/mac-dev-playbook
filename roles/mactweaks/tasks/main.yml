@@ -1,6 +1,6 @@
 ---
 - name: Backup dock plist file
-  command: cp -a ~/Library/Preferences/com.apple.dock.plist ~/Library/Preferences/com.apple.dock.plist.bak
+  ansible.builtin.command: cp -a ~/Library/Preferences/com.apple.dock.plist ~/Library/Preferences/com.apple.dock.plist.bak
   when: mactweaks_backup_dock
   changed_when: false
   tags:
@@ -40,14 +40,14 @@
     - dock
 
 - name: Restart dock
-  command: killall Dock
+  ansible.builtin.command: killall Dock
   changed_when: false
   tags:
     - tweaks
     - dock
 
 - name: Run macOS defaults.
-  osx_defaults:
+  ansible.builtin.osx_defaults:
     domain: "{{ item.domain }}"
     key: "{{ item.key }}"
     type: "{{ item.type }}"

@@ -11,7 +11,7 @@
     - zplug
 
 - name: Check if fzf is installed
-  stat:
+  ansible.builtin.stat:
     path: "/usr/local/bin/fzf"
   register: stat_fzf
   tags:
@@ -19,7 +19,7 @@
     - fzf
 
 - name: Configure fzf
-  shell: $(brew --prefix)/opt/fzf/install --no-bash --no-fish --completion --no-update-rc --key-bindings
+  ansible.builtin.shell: $(brew --prefix)/opt/fzf/install --no-bash --no-fish --completion --no-update-rc --key-bindings
   when: stat_fzf.stat.exists
   tags:
     - zsh
