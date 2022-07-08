@@ -217,12 +217,6 @@ mas_installed:
   - { id: 568494494, name: "Pocket" }
   - { id: 1510445899, name: "Meeter for Zoom, Teams & Co" }
 
-# Git configuration
-git_enable: true
-
-# Dotfiles configuration
-dotfiles_enable: true
-
 # Node packages via yarn
 yarn_packages: []
 

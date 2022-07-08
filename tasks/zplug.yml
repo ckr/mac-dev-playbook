@@ -10,23 +10,6 @@
   tags:
     - zplug
 
-- name: check if ~/.zshrc exists
-  stat:
-    path: "~/.zshrc"
-  register: stat_zshrc
-  tags:
-    - zsh
-    - zsh_config
-
-- name: Backing up existing ~/.zshrc
-  copy:
-    src: ~/.zshrc
-    dest: ~/.zshrc.orig
-  when: stat_zshrc.stat.exists
-  tags:
-    - zsh
-    - zsh_cofig
-
 - name: Check if fzf is installed
   stat:
     path: "/usr/local/bin/fzf"
@@ -41,14 +24,3 @@
   tags:
     - zsh
     - fzf
-
-- name: Copy dotfiles
-  copy:
-    src: "{{ item }}"
-    dest: "~/.{{ item | basename }}"
-  with_fileglob:
-    - "files/zplug/*"
-  tags:
-    - zsh_files
-    - dotaliases
-    - spaceship

@@ -56,12 +56,6 @@ mactweaks_enable: false
 # MAS configuration
 mas_enabled: false
 
-# Git configuration
-git_enable: false
-
-# Dotfiles configuration
-dotfiles_enable: false
-
 # Install packages from other package managers.
 # Note: You are responsible for making sure the required package managers are
 # installed, eg. through homebrew.

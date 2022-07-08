@@ -221,9 +221,6 @@ mas_installed:
   - id: 904280696
     name: "Things"
 
-# Dotfiles configuration
-dotfiles_enable: true
-
 # Node packages via yarn
 yarn_packages: []
 

@@ -36,10 +36,6 @@
       when: mas_enable
       tags:
         - mas
-    - role: dotfiles
-      when: dotfiles_enable
-      tags:
-        - dotfiles
 
   tasks:
     - import_tasks: tasks/ssh_keys.yml
