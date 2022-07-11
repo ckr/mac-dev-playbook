@@ -65,6 +65,7 @@ homebrew_packages_installed:
   - openssl@1.1
   - openssl@3
   - snyk
+  - stow
 homebrew_casks_installed:
   - 1password-cli
   - alfred
