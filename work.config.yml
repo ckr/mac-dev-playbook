@@ -66,6 +66,7 @@ homebrew_packages_installed:
   - openssl@3
   - snyk
   - stow
+  - bfg
 homebrew_casks_installed:
   - 1password-cli
   - alfred
