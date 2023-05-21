@@ -97,18 +97,8 @@ mactweaks_system_defaults:
   - { domain: com.apple.dock, key: tilesize, type: int, value: 50 }
   - { domain: com.apple.dock, key: largesize, type: float, value: 58 }
   - { domain: com.apple.screensaver, key: askForPassword, type: int, value: 1 }
-  - {
-      domain: com.apple.screensaver,
-      key: tokenRemovalAction,
-      type: int,
-      value: 0,
-    }
-  - {
-      domain: com.apple.screensaver,
-      key: askForPasswordDelay,
-      type: float,
-      value: 0.0,
-    }
+  - { domain: com.apple.screensaver, key: tokenRemovalAction, type: int, value: 0 }
+  - { domain: com.apple.screensaver, key: askForPasswordDelay, type: float, value: 0.0 }
   # TODO: Fix this ansible is having an issue setting them.
   # - { domain: /Library/Preferences/com.apple.SoftwareUpdate.plist, key: AutomaticCheckEnabled, type: int, value: 1 }
   # - { domain: /Library/Preferences/com.apple.SoftwareUpdate.plist, key: ConfigDataInstall, type: bool, value: true }
