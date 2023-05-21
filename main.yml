@@ -1,19 +1,20 @@
 ---
-- hosts: all
+- name: Main
+  hosts: all
 
   vars_files:
     - default.config.yml
 
   pre_tasks:
     - name: Include playbook home configuration overwrites.
-      include_vars: "{{ item }}"
+      ansible.builtin.include_vars: "{{ item }}"
       with_fileglob:
         - "{{ playbook_dir }}/{{ use_config }}.config.yml"
       when: use_config is defined
       tags:
         - always
     - name: Include playbook uncommited configuration overwrites.
-      include_vars: "{{ item }}"
+      ansible.builtin.include_vars: "{{ item }}"
       with_fileglob:
         - "{{ playbook_dir }}/config.yml"
       tags:
@@ -38,22 +39,26 @@
         - mas
 
   tasks:
-    - import_tasks: tasks/ssh_keys.yml
+    - name: Configure ssh keys
+      ansible.builtin.import_tasks: tasks/ssh_keys.yml
       when: configure_ssh_keys
       tags:
         - ssh_keys
-    - import_tasks: tasks/zplug.yml
+    - name: Configure zplug
+      ansible.builtin.import_tasks: tasks/zplug.yml
       when: configure_zplug
       tags:
         - zplug
-    - import_tasks: tasks/extra-packages.yml
+    - name: Configure extra packages
+      ansible.builtin.import_tasks: tasks/extra-packages.yml
       when: configure_extra_packages
       tags:
         - yarn
         - npm
         - pip
         - gem
-    - import_tasks: tasks/tmux.yml
+    - name: Configure tmux
+      ansible.builtin.import_tasks: tasks/tmux.yml
       when: configure_tmux
       tags:
         - tmux

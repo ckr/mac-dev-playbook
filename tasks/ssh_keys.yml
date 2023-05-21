@@ -3,7 +3,7 @@
 # keys of the user's GitHub profile
 ---
 - name: Fetching GitHub keys
-  ansible.builtin.authorized_key:
+  ansible.posix.authorized_key:
     user: "{{ lookup('env', 'USER') | default(omit) }}"
     state: present
     key: "https://github.com/{{ github_ssh_keys_username }}.keys"

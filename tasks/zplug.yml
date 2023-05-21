@@ -21,6 +21,7 @@
 - name: Configure fzf
   ansible.builtin.shell: $(brew --prefix)/opt/fzf/install --no-bash --no-fish --completion --no-update-rc --key-bindings
   when: stat_fzf.stat.exists
+  changed_when: false
   tags:
     - zsh
     - fzf

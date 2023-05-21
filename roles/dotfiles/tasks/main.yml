@@ -3,6 +3,7 @@
   ansible.builtin.copy:
     src: "{{ item }}"
     dest: "{{ ansible_user_dir }}/.{{ item | basename }}"
+    mode: u+rwx,go+rx
   with_fileglob:
     - "./dotfiles/*"
   tags:
@@ -13,6 +14,7 @@
   ansible.builtin.file:
     path: "{{ ansible_user_dir }}/bin"
     state: directory
+    mode: u+rwx,go+rx
   tags:
     - folders
 
@@ -20,6 +22,7 @@
   ansible.builtin.file:
     path: "{{ ansible_user_dir }}/work"
     state: directory
+    mode: u+rwx,go+rx
   tags:
     - folders
 
@@ -27,6 +30,7 @@
   ansible.builtin.file:
     path: "{{ ansible_user_dir }}/code"
     state: directory
+    mode: u+rwx,go+rx
   tags:
     - folders
 
@@ -45,6 +49,7 @@
   ansible.builtin.template:
     src: path_exports.j2
     dest: "{{ ansible_user_dir }}/.path_exports"
+    mode: u+rwx,go+rx
   tags:
     - files
     - dotaliases
