@@ -4,6 +4,7 @@ configure_ssh_keys: true
 github_ssh_keys_username: ckr
 configure_zplug: true
 configure_extra_packages: true
+configure_tmux: true
 
 # Homebrew configuration
 homebrew_enable: true

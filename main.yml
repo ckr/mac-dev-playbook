@@ -53,3 +53,7 @@
         - npm
         - pip
         - gem
+    - import_tasks: tasks/tmux.yml
+      when: configure_tmux
+      tags:
+        - tmux

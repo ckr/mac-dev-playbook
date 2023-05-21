@@ -13,6 +13,9 @@ configure_ssh_keys: false
 configure_zplug: false
 configure_extra_packages: false
 
+# Enable the configuration of tmux
+configure_tmux: false
+
 # Homebrew configuration
 # Enable/Disable this role
 homebrew_enable: false
@@ -69,7 +72,6 @@ npm_packages: []
 # - name: bower
 #   state: present # present/absent/latest, default: present
 #   version: "^1.8.8" # default: N/A
-
 
 pip_packages: []
 # - name: mkdocs
