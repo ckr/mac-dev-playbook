@@ -47,7 +47,7 @@ jobs:
 
       - name: Install python test dependencies.
         run: pip3 install packaging
-        
+
       - name: Install test dependencies.
         run: brew install ansible
 
