@@ -48,6 +48,7 @@ homebrew_packages_installed:
   - npm
   - bat
   - nvim
+  - ripgrep
 homebrew_casks_installed:
   - 1password
   - alfred
