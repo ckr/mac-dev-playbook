@@ -1,11 +1,10 @@
 ---
-# Set default php version to 8.1
 # this is required due to some global composer packages
-composer_defaults_php_version: php@8.1
+composer_defaults_php_version: php
 # List of dependencies before installing composer packages
 composer_homebrew_dependencies:
   - libiconv
-  - php@8.1
+  - php
   - composer
 # Install packages from composer package manager.
 composer_packages: []
