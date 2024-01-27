@@ -16,7 +16,7 @@
 
 - name: Move dock item to the correct position.
   ansible.builtin.command:
-    cmd: dockutil --move '{{ item.name | default(item) }}' --position '{{ item.pos }} --no-restart'
+    cmd: dockutil --move '{{ item.name | default(item) }}' --position {{ item.pos }} --no-restart
   register: dockitem_move
   changed_when: dockitem_move.rc != 0
   when: current_position|int != item.pos|int
