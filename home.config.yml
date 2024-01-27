@@ -10,66 +10,44 @@ configure_tmux: true
 # Enable/Disable this role
 homebrew_enable: true
 homebrew_packages_installed:
-  - ack
   - asciinema
   - coreutils
   - cowsay
-  - csshx
   - fabric
-  - figlet
   - gd
-  - goaccess
   - gpg
   - htop-osx
-  - hydra
   - kubernetes-cli
-  - links
-  - lolcat
   - mas
-  - nikto
-  - percona-toolkit
-  - pssh
   - pwgen
   - pyenv
   - python
-  - python3
-  - rbenv
-  - rbenv-default-gems
   - rlwrap
-  - ruby
   - socat
-  - sqlmap
   - sslscan
   - tmux
-  - tor
   - tree
   - watch
   - yarn
   - npm
   - bat
+  - awscli
   - nvim
+  - fzf
   - ripgrep
+  - stow
+  - zplug
+  - lazygit
 homebrew_casks_installed:
-  - 1password
-  - alfred
-  - amethyst
-  - bartender
+  - 1password-cli
   - burp-suite
-  - cakebrew
-  - docker
-  - dropbox
-  - flexiglass
-  - google-chrome
   - gpg-suite
   - istat-menus
   - iterm2
   - rectangle
-  - sequel-pro
-  - slack
   - spotify
   - sublime-text
   - visual-studio-code
-  - zerotier-one
 
 # Composer configuration
 composer_enable: true
@@ -191,16 +169,12 @@ mas_upgrade_all: false
 # Installed List
 mas_installed:
   - { id: 866773894, name: "Quiver" }
-  - { id: 485812721, name: "TweetDeck" }
-  - { id: 1491071483, name: "Tot" }
   - { id: 409907375, name: "Remote Desktop" }
   - { id: 1480068668, name: "Messenger" }
-  - { id: 904280696, name: "Things" }
   - { id: 1516894961, name: "Codye" }
   - { id: 1303222628, name: "Paprika Recipe Manager 3" }
   - { id: 587769990, name: "EyeFriendly" }
   - { id: 638161122, name: "YubiKey Personalization Tool" }
-  - { id: 426410278, name: "Flexiglass" }
   - { id: 425424353, name: "The Unarchiver" }
   - { id: 924726344, name: "Deliveries" }
   - { id: 568494494, name: "Pocket" }
