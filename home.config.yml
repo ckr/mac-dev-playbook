@@ -61,7 +61,6 @@ composer_packages:
   - name: sebastian/phpcpd
   - name: phpunit/php-code-coverage
   - name: phpunit/phpunit
-  - name: phpmetrics/phpmetrics
   - name: phpstan/phpstan
   - name: povils/phpmnd
 
