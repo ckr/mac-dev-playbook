@@ -1,6 +1,53 @@
 ---
+- name: Backup dock plist file
+  ansible.builtin.command: cp -a ~/Library/Preferences/com.apple.dock.plist ~/Library/Preferences/com.apple.dock.plist.bak
+  when: mactweaks_backup_dock
+  changed_when: false
+  tags:
+    - tweaks
+    - dock
+
+- name: Install dependencies like dockutil
+  community.general.homebrew:
+    name: "{{ item.name | default(item) }}"
+    install_options: "{{ item.install_options | default(omit) }}"
+    state: present
+  loop: "{{ brew.dependencies }}"
+  when: mactweaks_dock_enable
+  tags:
+    - dock
+
+- name: Remove configured Dock items.
+  ansible.builtin.include_tasks: dock-remove.yml
+  when: mactweaks_dock_enable
+  loop: "{{ mactweaks_dock_items_remove }}"
+  tags:
+    - dock
+
+- name: Ensure required dock items exist.
+  ansible.builtin.include_tasks: dock-add.yml
+  when: mactweaks_dock_enable
+  loop: "{{ mactweaks_dock_items_persist }}"
+
+- name: Ensure dock items are in correct position.
+  ansible.builtin.include_tasks: dock-position.yml
+  when:
+    - mactweaks_dock_enable
+    - item.pos is defined
+    - item.pos > 0
+  loop: "{{ mactweaks_dock_items_persist }}"
+  tags:
+    - dock
+
+- name: Restart dock
+  ansible.builtin.command: killall Dock
+  changed_when: false
+  tags:
+    - tweaks
+    - dock
+
 - name: Run macOS defaults.
-  community.general.osx_defaults:
+  ansible.builtin.osx_defaults:
     domain: "{{ item.domain }}"
     key: "{{ item.key }}"
     type: "{{ item.type }}"
