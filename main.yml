@@ -57,8 +57,3 @@
         - npm
         - pip
         - gem
-    - name: Configure tmux
-      ansible.builtin.import_tasks: tasks/tmux.yml
-      when: configure_tmux
-      tags:
-        - tmux
