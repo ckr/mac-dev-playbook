@@ -48,6 +48,7 @@ homebrew_casks_installed:
   - spotify
   - sublime-text
   - visual-studio-code
+  - shottr
 
 # Composer configuration
 composer_enable: true
