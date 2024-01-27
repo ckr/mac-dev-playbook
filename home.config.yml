@@ -113,42 +113,38 @@ mactweaks_dock_items_persist:
     path: /Applications/Google Chrome.app/
     section: apps
     pos: 3
-  - name: Notes
-    path: /System/Applications/Notes.app/
-    section: apps
-    pos: 4
   - name: System Settings
     path: /System/Applications/System Settings.app/
     section: apps
-    pos: 5
+    pos: 4
   - name: Messages
     path: /System/Applications/Messages.app/
     section: apps
-    pos: 6
+    pos: 5
   - name: WhatsApp
     path: /Applications/WhatsApp.app/
     section: apps
-    pos: 7
+    pos: 6
   - name: Messenger
     path: /Applications/Messenger.app/
     section: apps
-    pos: 8
+    pos: 7
   - name: Joplin
     path: /Applications/Joplin.app/
     section: apps
-    pos: 9
+    pos: 8
   - name: Pocket
     path: /Applications/Pocket.app/
     section: apps
-    pos: 10
+    pos: 9
   - name: Home
     path: /System/Applications/Home.app/
     section: apps
-    pos: 11
+    pos: 10
   - name: iTerm
     path: /Applications/iTerm.app/
     section: apps
-    pos: 12
+    pos: 11
   - name: GEOIMAGING Dropbox
     path: /Users/ckr/GEOIMAGING Dropbox/
     section: others
