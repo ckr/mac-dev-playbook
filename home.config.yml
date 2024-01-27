@@ -100,7 +100,6 @@ mactweaks_dock_items_remove:
   - Numbers
   - Pages
   - App Store
-  - System Preferences
 mactweaks_dock_items_persist:
   - name: Launchpad
     path: /System/Applications/Launchpad.app/
@@ -118,8 +117,8 @@ mactweaks_dock_items_persist:
     path: /System/Applications/Notes.app/
     section: apps
     pos: 4
-  - name: System Preferences
-    path: /System/Applications/System Preferences.app/
+  - name: System Settings
+    path: /System/Applications/System Settings.app/
     section: apps
     pos: 5
   - name: Messages
