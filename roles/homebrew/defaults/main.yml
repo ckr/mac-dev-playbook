@@ -1,8 +1,6 @@
 ---
 # Make sure the following taps are configured
 homebrew_taps:
-  - homebrew/core
-  - homebrew/cask
   - snyk/tap
 # Make sure the following packages are installed/uninstalled
 # Installed List
