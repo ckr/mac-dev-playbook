@@ -12,7 +12,7 @@
     name: "{{ item.name | default(item) }}"
     install_options: "{{ item.install_options | default(omit) }}"
     state: present
-  loop: "{{ brew.dependencies }}"
+  loop: "{{ mactweaks_brew.dependencies }}"
   when: mactweaks_dock_enable
   tags:
     - dock
@@ -47,7 +47,7 @@
     - dock
 
 - name: Run macOS defaults.
-  ansible.builtin.osx_defaults:
+  community.general.osx_defaults:
     domain: "{{ item.domain }}"
     key: "{{ item.key }}"
     type: "{{ item.type }}"

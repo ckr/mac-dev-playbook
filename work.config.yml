@@ -115,7 +115,7 @@ mactweaks_system_defaults:
   - { domain: com.apple.dock, key: largesize, type: float, value: 58 }
   - { domain: com.apple.screensaver, key: askForPassword, type: int, value: 1 }
   - { domain: com.apple.screensaver, key: tokenRemovalAction, type: int, value: 0 }
-  - { domain: com.apple.screensaver, key: askForPasswordDelay, type: float, value: 0.0 }
+  - { domain: com.apple.screensaver, key: askForPasswordDelay, type: float, value: !!float "0.0" }
   # TODO: Fix this ansible is having an issue setting them.
   # - { domain: /Library/Preferences/com.apple.SoftwareUpdate, key: AutomaticCheckEnabled, type: int, value: 1 }
   # - { domain: /Library/Preferences/com.apple.SoftwareUpdate, key: ConfigDataInstall, type: bool, value: true }
@@ -135,59 +135,59 @@ mactweaks_dock_items_remove:
   - Music
   - Podcasts
   - News
-  - 'App Store'
+  - App Store
 mactweaks_dock_items_persist:
-  - name: "Launchpad"
-    path: "/System/Applications/Launchpad.app/"
-    section: "apps"
+  - name: Launchpad
+    path: /System/Applications/Launchpad.app/
+    section: apps
     pos: 1
-  - name: "Shift"
-    path: "/Applications/Shift.app/"
-    section: "apps"
+  - name: Shift
+    path: /Applications/Shift.app/
+    section: apps
     pos: 2
-  - name: "Google Chrome"
-    path: "/Applications/Google Chrome.app/"
-    section: "apps"
+  - name: Google Chrome
+    path: /Applications/Google Chrome.app/
+    section: apps
     pos: 3
-  - name: "Postman"
-    path: "/Applications/Postman.app/"
-    section: "apps"
+  - name: Postman
+    path: /Applications/Postman.app/
+    section: apps
     pos: 4
-  - name: "Calendar"
-    path: "/System/Applications/Calendar.app/"
-    section: "apps"
+  - name: Calendar
+    path: /System/Applications/Calendar.app/
+    section: apps
     pos: 5
-  - name: "System Preferences"
-    path: "/System/Applications/System Preferences.app/"
-    section: "apps"
+  - name: System Preferences
+    path: /System/Applications/System Preferences.app/
+    section: apps
     pos: 6
-  - name: "Things3"
-    path: "/Applications/Things3.app/"
-    section: "apps"
+  - name: Things3
+    path: /Applications/Things3.app/
+    section: apps
     pos: 7
-  - name: "Slack"
-    path: "/Applications/Slack.app/"
-    section: "apps"
+  - name: Slack
+    path: /Applications/Slack.app/
+    section: apps
     pos: 8
-  - name: "iTerm"
-    path: "/Applications/iTerm.app/"
-    section: "apps"
+  - name: iTerm
+    path: /Applications/iTerm.app/
+    section: apps
     pos: 9
-  - name: "Quiver"
-    path: "/Applications/Quiver.app/"
-    section: "apps"
+  - name: Quiver
+    path: /Applications/Quiver.app/
+    section: apps
     pos: 10
-  - name: "Workplace Chat"
-    path: "/Applications/Workplace Chat.app/"
-    section: "apps"
+  - name: Workplace Chat
+    path: /Applications/Workplace Chat.app/
+    section: apps
     pos: 11
-  - name: "OneDrive - Booking.com Transport"
-    path: "/Users/kouloumbrisc/OneDrive - Booking.com Transport/"
-    section: "others"
+  - name: OneDrive - Booking.com Transport
+    path: /Users/kouloumbrisc/OneDrive - Booking.com Transport/
+    section: others
     pos: 1
-  - name: "Downloads"
-    path: "/Users/kouloumbrisc/Downloads/"
-    section: "others"
+  - name: Downloads
+    path: /Users/kouloumbrisc/Downloads/
+    section: others
     pos: 2
 
 # MAS configuration
@@ -199,40 +199,37 @@ mas_upgrade_all: false
 # Installed List
 mas_installed:
   - id: 1516894961
-    name: "Codye"
+    name: Codye
   - id: 866773894
-    name: "Quiver"
+    name: Quiver
   - id: 1491071483
-    name: "Tot"
+    name: Tot
   - id: 904280696
-    name: "Things"
+    name: Things
   - id: 1516894961
-    name: "Codye"
+    name: Codye
   - id: 587769990
-    name: "EyeFriendly"
+    name: EyeFriendly
   - id: 638161122
-    name: "YubiKey Personalization Tool"
+    name: YubiKey Personalization Tool
   - id: 426410278
-    name: "Flexiglass"
+    name: Flexiglass
   - id: 425424353
-    name: "The Unarchiver"
+    name: The Unarchiver
   - id: 568494494
-    name: "Pocket"
+    name: Pocket
   - id: 1510445899
-    name: "Meeter"
+    name: Meeter
   - id: 1354318707
-    name: "Core Tunnel"
+    name: Core Tunnel
   - id: 904280696
-    name: "Things"
+    name: Things
 
 # Node packages via yarn
 yarn_packages: []
-
 # Node packages via npm
 npm_packages: []
-
 # Python packages via pip
 pip_packages: []
-
 # Ruby gems
 gem_packages: []

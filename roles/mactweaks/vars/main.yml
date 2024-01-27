@@ -1,4 +1,4 @@
 ---
-brew:
+mactweaks_brew:
   dependencies:
     - dockutil

@@ -12,7 +12,7 @@
 
 - name: Check if fzf is installed
   ansible.builtin.stat:
-    path: "/usr/local/bin/fzf"
+    path: /usr/local/bin/fzf
   register: stat_fzf
   tags:
     - zsh

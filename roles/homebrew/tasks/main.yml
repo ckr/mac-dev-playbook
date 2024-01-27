@@ -1,8 +1,8 @@
 ---
 - name: Ensure configured taps are tapped.
   community.general.homebrew_tap:
-    tap: '{{ item.name | default(item) }}'
-    url: '{{ item.url | default(omit) }}'
+    tap: "{{ item.name | default(item) }}"
+    url: "{{ item.url | default(omit) }}"
     state: present
   loop: "{{ homebrew_taps }}"
 
@@ -30,7 +30,6 @@
   when: homebrew_upgrade_all
   tags:
     - homebrew_packages
-
 
 - name: Install configured cask applications.
   community.general.homebrew_cask:

@@ -1,5 +1,5 @@
 ---
-- name: "See if {{ item }} is in the Dock."
+- name: Check Dock item exists {{ item }}
   ansible.builtin.command:
     cmd: dockutil --find '{{ item }}'
   register: dockitem_exists
@@ -10,9 +10,11 @@
   tags:
     - dock
 
-- name: Ensure Dock item {{ item }} is removed.
+- name: Ensure Dock item is removed {{ item }}
   ansible.builtin.command:
     cmd: dockutil --remove '{{ item }}' --no-restart
+  register: dockitem_remove
+  changed_when: dockitem_remove.rc != 0
   when: dockitem_exists.rc  == 0
   tags:
     - dock
