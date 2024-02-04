@@ -38,6 +38,8 @@ homebrew_packages_installed:
   - stow
   - zplug
   - lazygit
+  - ansible-lint
+  - yamllint
 homebrew_casks_installed:
   - 1password-cli
   - burp-suite
@@ -49,6 +51,7 @@ homebrew_casks_installed:
   - sublime-text
   - visual-studio-code
   - shottr
+  - whatsapp
 
 # Composer configuration
 composer_enable: true
