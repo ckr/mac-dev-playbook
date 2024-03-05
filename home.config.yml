@@ -40,6 +40,9 @@ homebrew_packages_installed:
   - lazygit
   - ansible-lint
   - yamllint
+  - hugo
+  - certbot
+  - diff-so-fancy
 homebrew_casks_installed:
   - 1password-cli
   - burp-suite
@@ -52,7 +55,8 @@ homebrew_casks_installed:
   - visual-studio-code
   - shottr
   - whatsapp
-
+  - discord
+  - transmit
 # Composer configuration
 composer_enable: true
 composer_packages:
