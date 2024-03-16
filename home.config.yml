@@ -12,7 +12,6 @@ homebrew_enable: true
 homebrew_packages_installed:
   - asciinema
   - coreutils
-  - cowsay
   - fabric
   - gd
   - gpg
