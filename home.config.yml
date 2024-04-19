@@ -37,6 +37,10 @@ homebrew_packages_installed:
   - stow
   - zplug
   - lazygit
+  - ansible-lint
+  - yamllint
+  - hugo
+  - certbot
   - git-delta
 homebrew_casks_installed:
   - 1password-cli
