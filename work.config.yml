@@ -39,7 +39,6 @@ homebrew_packages_installed:
   - pwgen
   - pyenv
   - python
-  - python3
   - rbenv
   - rbenv-default-gems
   - rlwrap
@@ -69,6 +68,9 @@ homebrew_packages_installed:
   - stow
   - bfg
   - grc
+  - fzf
+  - lazygit
+  - git-delta
 homebrew_casks_installed:
   - 1password-cli
   - alfred
@@ -99,7 +101,6 @@ composer_packages:
   - name: sebastian/phpcpd
   - name: phpunit/php-code-coverage
   - name: phpunit/phpunit
-  - name: phpmetrics/phpmetrics
   - name: phpstan/phpstan
   - name: povils/phpmnd
 
@@ -181,14 +182,10 @@ mactweaks_dock_items_persist:
     path: /Applications/Workplace Chat.app/
     section: apps
     pos: 11
-  - name: OneDrive - Booking.com Transport
-    path: /Users/kouloumbrisc/OneDrive - Booking.com Transport/
-    section: others
-    pos: 1
   - name: Downloads
     path: /Users/kouloumbrisc/Downloads/
     section: others
-    pos: 2
+    pos: 1
 
 # MAS configuration
 mas_enable: true
@@ -198,32 +195,14 @@ mas_upgrade_all: false
 # Make sure the following apps are installed/uninstalled
 # Installed List
 mas_installed:
-  - id: 1516894961
-    name: Codye
-  - id: 866773894
-    name: Quiver
-  - id: 1491071483
-    name: Tot
-  - id: 904280696
-    name: Things
-  - id: 1516894961
-    name: Codye
-  - id: 587769990
-    name: EyeFriendly
-  - id: 638161122
-    name: YubiKey Personalization Tool
-  - id: 426410278
-    name: Flexiglass
-  - id: 425424353
-    name: The Unarchiver
-  - id: 568494494
-    name: Pocket
-  - id: 1510445899
-    name: Meeter
-  - id: 1354318707
-    name: Core Tunnel
-  - id: 904280696
-    name: Things
+  - { id: 1516894961, name: Codye }
+  - { id: 1491071483, name: Tot }
+  - { id: 587769990, name: EyeFriendly }
+  - { id: 638161122, name: YubiKey Personalization Tool }
+  - { id: 426410278, name: Flexiglass }
+  - { id: 425424353, name: The Unarchiver }
+  - { id: 1510445899, name: Meeter }
+  - { id: 1354318707, name: Core Tunnel }
 
 # Node packages via yarn
 yarn_packages: []
