@@ -148,8 +148,8 @@ mactweaks_dock_items_persist:
     path: /Applications/iTerm.app/
     section: apps
     pos: 11
-  - name: GEOIMAGING Dropbox
-    path: /Users/ckr/GEOIMAGING Dropbox/
+  - name: Dropbox
+    path: /Users/ckr/Dropbox/
     section: others
     pos: 1
   - name: Downloads
