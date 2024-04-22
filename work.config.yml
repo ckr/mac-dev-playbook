@@ -60,7 +60,7 @@ homebrew_packages_installed:
   - npm
   - bat
   - ripgrep
-  - neovim
+  - nvim
   - git-lfs
   - openssl@1.1
   - openssl@3
@@ -71,6 +71,7 @@ homebrew_packages_installed:
   - fzf
   - lazygit
   - git-delta
+  - zplug
 homebrew_casks_installed:
   - 1password-cli
   - amethyst
