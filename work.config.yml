@@ -73,21 +73,6 @@ homebrew_packages_installed:
   - git-delta
 homebrew_casks_installed:
   - 1password-cli
-  - alfred
-  - amethyst
-  - apparency
-  - bartender
-  - docker
-  - duo-connect
-  - gpg-suite
-  - istat-menus
-  - iterm2
-  - postman
-  - rectangle
-  - spotify
-  - sublime-text
-  - visual-studio-code
-  - jetbrains-toolbox
   - git-credential-manager
 
 # Composer configuration
