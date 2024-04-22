@@ -73,6 +73,8 @@ homebrew_packages_installed:
   - git-delta
 homebrew_casks_installed:
   - 1password-cli
+  - amethyst
+  - apparency
   - git-credential-manager
 
 # Composer configuration
