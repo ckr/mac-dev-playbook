@@ -42,6 +42,7 @@ homebrew_packages_installed:
   - hugo
   - certbot
   - git-delta
+  - tokei
 homebrew_casks_installed:
   - 1password-cli
   - burp-suite
