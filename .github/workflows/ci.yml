@@ -45,8 +45,14 @@ jobs:
           sudo rm -rf /Applications/Firefox.app
           sudo rm -rf /Applications/Google\ Chrome.app
 
+      - name: Create python virtual environment.
+        run: python3 -m venv path/to/venv
+
+      - name: Activate virtual environment
+        run: source path/to/venv/bin/activate
+
       - name: Install python test dependencies.
-        run: pip3 install packaging
+        run: python3 -m pip install packaging
 
       - name: Install test dependencies.
         run: brew install ansible
