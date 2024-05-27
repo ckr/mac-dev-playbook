@@ -49,7 +49,9 @@ jobs:
         run: python3 -m venv .venv
 
       - name: Activate virtual environment
-        run: source .venv/bin/activate
+        run: |
+          . .venv/bin/activate
+          echo PATH=$PATH >> $GITHUB_ENV
 
       - name: Install python test dependencies.
         run: python3 -m pip install packaging
