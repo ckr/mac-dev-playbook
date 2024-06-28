@@ -72,6 +72,7 @@ homebrew_packages_installed:
   - lazygit
   - git-delta
   - zplug
+  - eza
 homebrew_casks_installed:
   - 1password-cli
   - amethyst

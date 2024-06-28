@@ -44,6 +44,7 @@ homebrew_packages_installed:
   - git-delta
   - tokei
   - duf
+  - eza
 homebrew_casks_installed:
   - 1password-cli
   - burp-suite
