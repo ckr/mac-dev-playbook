@@ -72,6 +72,8 @@ homebrew_packages_installed:
   - lazygit
   - git-delta
   - zplug
+  - tokei
+  - duf
   - eza
 homebrew_casks_installed:
   - 1password-cli
