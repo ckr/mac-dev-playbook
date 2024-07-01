@@ -40,9 +40,7 @@ homebrew_packages_installed:
   - pyenv
   - python
   - rbenv
-  - rbenv-default-gems
   - rlwrap
-  - ruby
   - screenfetch
   - selecta
   - socat

@@ -45,6 +45,7 @@ homebrew_packages_installed:
   - tokei
   - duf
   - eza
+  - oh-my-posh
 homebrew_casks_installed:
   - 1password-cli
   - burp-suite
