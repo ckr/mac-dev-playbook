@@ -46,6 +46,8 @@ homebrew_packages_installed:
   - duf
   - eza
   - oh-my-posh
+  - otree
+  - fx
 homebrew_casks_installed:
   - 1password-cli
   - burp-suite
