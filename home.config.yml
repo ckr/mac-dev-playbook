@@ -63,6 +63,7 @@ homebrew_casks_installed:
   - discord
   - transmit
   - git-credential-manager
+  - nikitabobko/tap/aerospace
 # Composer configuration
 composer_enable: true
 composer_packages:
