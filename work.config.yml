@@ -74,6 +74,8 @@ homebrew_packages_installed:
   - duf
   - eza
   - oh-my-posh
+  - direnv
+  - atuin
 homebrew_casks_installed:
   - 1password-cli
   - amethyst

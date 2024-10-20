@@ -48,6 +48,8 @@ homebrew_packages_installed:
   - oh-my-posh
   - otree
   - fx
+  - direnv
+  - atuin
 homebrew_casks_installed:
   - 1password-cli
   - burp-suite
