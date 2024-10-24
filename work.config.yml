@@ -76,6 +76,7 @@ homebrew_packages_installed:
   - oh-my-posh
   - direnv
   - atuin
+  - borders
 homebrew_casks_installed:
   - 1password-cli
   - amethyst
