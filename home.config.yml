@@ -51,12 +51,21 @@ homebrew_packages_installed:
   - direnv
   - atuin
   - borders
+  - btop
+  - lazydocker
+  - lua
+  - switchaudio-osx
+  - nowplaying-cli
+  - iftop
+  - asitop
+  - glow
+  - serpl
 homebrew_casks_installed:
   - 1password-cli
   - burp-suite
   - gpg-suite
   - istat-menus
-  - iterm2
+  - ghostty
   - rectangle
   - spotify
   - sublime-text
@@ -67,6 +76,7 @@ homebrew_casks_installed:
   - transmit
   - git-credential-manager
   - nikitabobko/tap/aerospace
+  - raycast
 # Composer configuration
 composer_enable: true
 composer_packages:
@@ -94,7 +104,7 @@ mactweaks_system_defaults:
   - { domain: com.apple.dock, key: largesize, type: float, value: 58 }
   - { domain: com.apple.screensaver, key: askForPassword, type: int, value: 1 }
   - { domain: com.apple.screensaver, key: tokenRemovalAction, type: int, value: 0 }
-  - { domain: com.apple.screensaver, key: askForPasswordDelay, type: float, value: !!float "0.0" }
+  - { domain: com.apple.screensaver, key: askForPasswordDelay, type: float, value: 0.0 }
   # TODO: Fix this ansible is having an issue setting them.
   # - { domain: /Library/Preferences/com.apple.SoftwareUpdate.plist, key: AutomaticCheckEnabled, type: int, value: 1 }
   # - { domain: /Library/Preferences/com.apple.SoftwareUpdate.plist, key: ConfigDataInstall, type: bool, value: true }
