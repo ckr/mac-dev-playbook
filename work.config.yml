@@ -77,6 +77,10 @@ homebrew_packages_installed:
   - direnv
   - atuin
   - borders
+  - nowplaying-cli
+  - lazydocker
+  - glow
+  - serpl
 homebrew_casks_installed:
   - 1password-cli
   - amethyst
